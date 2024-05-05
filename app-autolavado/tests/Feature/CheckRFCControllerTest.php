@@ -1,46 +1,42 @@
 <?php
 
-namespace Tests\Unit\Controllers;
+namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
-use App\Http\Controllers\CheckRFCController;
-use App\Models\Client;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Session;
 
 class CheckRFCControllerTest extends TestCase
 {
-    public function test_checkRFC_returns_true_if_client_exists()
+    use DatabaseTransactions;
+
+    /**
+     * Test checking an existing RFC.
+     *
+     * @return void
+     */
+    public function testCheckExistingRFC()
     {
-        // Configurar la solicitud con el RFC del cliente existente en la base de datos
-        $existingRFC = 'AGO150812H27';
-        $sucursal = '601'; // La sucursal asociada al cliente existente
-        $request = new Request(['rfc' => $existingRFC, 'sucursal' => $sucursal]);
+        $response = $this->postJson('/routers/web/check-rfc', [
+            'RFC' => 'AGO150812H27',  // Asegúrate de que este RFC realmente exista en tu base de datos.
+        ]);
 
-        // Configurar la sesión en la solicitud
-        $request->setLaravelSession(app('session')->driver());
-
-        // Realizar la solicitud al controlador
-        $controller = new CheckRFCController();
-        $response = $controller->checkRFC($request);
-
-        // Verificar que la respuesta sea un JSON con 'exists' igual a true
-        $this->assertTrue($response->getData()->exists);
-
-        // Registrar un mensaje de información sobre el resultado de la solicitud
-        Log::info('Solicitud procesada exitosamente.');
-
-        // Verificar que se registre la información en el log de Laravel
-        $this->assertLogContains("Consulta de RFC existente: RFC=$existingRFC, Sucursal=$sucursal");
-
-        // Log adicional
-        Log::info('Prueba unitaria completada.');
+        $response->assertStatus(200);
+        $response->assertJson(['exists' => true]);
     }
 
-    protected function assertLogContains($expected)
+    /**
+     * Test checking a non-existing RFC.
+     *
+     * @return void
+     */
+    public function testCheckNonExistingRFC()
     {
-        $logContent = file_get_contents(storage_path('logs/laravel.log'));
-        $this->assertStringContainsString($expected, $logContent);
+        $response = $this->postJson('/api/check-rfc', [
+            'rfc' => 'RFC_NO_EXISTENTE',  // Utiliza un RFC que estés seguro de que no está en tu base de datos.
+            'sucursal' => 'Secondary'
+        ]);
+
+        $response->assertStatus(200);
+        $response->assertJson(['exists' => false]);
     }
 }
