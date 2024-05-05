@@ -2,27 +2,29 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use App\Models\Client;
 
 class CheckRFCControllerTest extends TestCase
 {
-    use DatabaseTransactions;
+    use WithoutMiddleware; // Si tienes middleware que podría bloquear la solicitud, usa este Trait para deshabilitarlo en las pruebas
 
     /**
-     * Test checking an existing RFC.
+     * Test checking an existing RFC in the database.
      *
      * @return void
      */
     public function testCheckExistingRFC()
     {
-        $response = $this->postJson('/web/check-rfc', [
-            'RFC' => 'XYZ123456789',  // Asegúrate de que este RFC realmente exista en tu base de datos.
+
+        $response = $this->postJson('/check-rfc', [
+            'rfc' => 'XYZ123456789',
             'sucursal' => 'Sucursal Principal'
         ]);
 
-        $response->assertStatus(200);
-        $response->assertJson(['exists' => true]);
+        $response->assertStatus(200)
+                 ->assertJson(['exists' => true]);
     }
 
     /**
@@ -32,12 +34,12 @@ class CheckRFCControllerTest extends TestCase
      */
     public function testCheckNonExistingRFC()
     {
-        $response = $this->postJson('/api/check-rfc', [
-            'rfc' => 'RFC_NO_EXISTENTE',  // Utiliza un RFC que estés seguro de que no está en tu base de datos.
-            'sucursal' => 'Secondary'
+        $response = $this->postJson('/check-rfc', [
+            'rfc' => 'noexistente_RFC',
+            'sucursal' => 'basededatos_sucursal'
         ]);
 
-        $response->assertStatus(200);
-        $response->assertJson(['exists' => false]);
+        $response->assertStatus(200)
+                 ->assertJson(['exists' => false]);
     }
 }
