@@ -1,54 +1,55 @@
 <?php
 
-namespace Tests\Unit\Controllers;
+namespace Tests\Feature\Models;
 
+use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use App\Http\Controllers\ClientController;
 use App\Models\Client;
 use Illuminate\Support\Facades\Log;
-use Mockery;
 
 class ClientControllerTest extends TestCase
 {
-    public function testGetByRFCReturnsClientInformationIfExists()
+
+    /**
+     * Test for creating a new client.
+     *
+     * @return void
+     */
+    public function test_create_client()
+{
+    // Crear un nuevo cliente
+    $clientData = [
+        'CLIENTE' => 11,
+        'NOMBRE' => 'John Doe',
+        // Agrega aquí los demás campos necesarios
+    ];
+
+    // Guardar el cliente en la base de datos
+    Client::create($clientData);
+
+    // Verificar que el cliente fue creado correctamente
+    $this->assertDatabaseHas('client', $clientData);
+
+    // Verificar que se registró el evento de creación en el log
+
+    return $clientData;
+}
+
+
+
+    /**
+     * Test for deleting a client.
+     *
+     * @return void
+     */
+    public function test_delete_client($clientData)
     {
-        // Crear mock de Client
-        $clientMock = Mockery::mock(Client::class);
-        $clientMock->shouldReceive('where')->andReturnSelf();
-        $clientMock->shouldReceive('first')->andReturn(new Client());
+        // Eliminar el cliente de la base de datos directamente mediante una consulta SQL
+        Client::where('CLIENTE', $clientData['CLIENTE'])->delete();
 
-        // Mockear los modelos restantes
-        // ...
+        // Verificar que los campos del cliente fueron eliminados correctamente
+        $this->assertDatabaseMissing('client', $clientData);
 
-        // Mockear el registro del log
-        Log::shouldReceive('error')->andReturnNull();
-
-        // Crear instancia del controlador
-        $controller = new ClientController();
-
-        // Llamar al método getByRFC del controlador con un RFC de ejemplo
-        $response = $controller->getByRFC('RFC_DE_EJEMPLO');
-
-        // Verificar que la respuesta sea un objeto de tipo JsonResponse
-        $this->assertInstanceOf(\Illuminate\Http\JsonResponse::class, $response);
-
-        // Verificar que la respuesta tenga un código de estado 200 (OK) o 500 (Error interno del servidor)
-        $statusCode = $response->getStatusCode();
-        $this->assertTrue(in_array($statusCode, [200, 500]), "Expected status code 200 or 500, got $statusCode");
-
-        // Si el código de estado es 200, también puedes verificar la estructura de los datos de respuesta
-        if ($statusCode == 200) {
-            // Verificar que la respuesta contenga la estructura esperada
-            $expectedDataStructure = [
-                // ...
-            ];
-            $responseData = $response->json();
-            foreach ($expectedDataStructure as $key) {
-                $this->assertArrayHasKey($key, $responseData);
-            }
-        }
-
-        // Cerrar el mock de Client
-        Mockery::close();
+        // Verificar que se registró el evento de eliminación en el log
     }
 }

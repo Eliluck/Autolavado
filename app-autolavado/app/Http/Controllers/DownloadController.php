@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Services\FTPService;
+use App\Providers\FTPService;
 use Illuminate\Support\Facades\Log;
 
 class DownloadController extends Controller

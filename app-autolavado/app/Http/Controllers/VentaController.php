@@ -53,7 +53,7 @@ class VentaController extends Controller
                     'importe' => round($venta->importe, 2),
                     'impuesto' => round($venta->impuesto, 2),
                     'total' => number_format($total, 2),
-                    'moneda' => utf8_encode($venta->moneda),
+                    'moneda' => mb_convert_encoding($venta->moneda, "UTF-8", "ISO-8859-1"),
                     'UUID' => $venta->UUID,
                 ];
                 array_push($ventasFormateadas, $ventaFormateada);

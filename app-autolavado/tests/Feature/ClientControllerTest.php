@@ -1,46 +1,66 @@
 <?php
 
-namespace Tests\Unit\Controllers;
+namespace Tests\Feature;
 
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 use App\Models\Client;
-use App\Models\SatUsoCFDI;
-use App\Models\SatRegFisc;
-use App\Models\PagoForma;
-use App\Models\PagoMetodo;
-use App\Models\DirSatPais;
-use App\Http\Controllers\ClientController;
 
 class ClientControllerTest extends TestCase
 {
-    public function testGetByRFCReturnsClientInformationIfExists()
+    use WithoutMiddleware; // Esto desactiva el middleware si es necesario para la prueba
+
+    public function testGetClientByRFCNotFound()
     {
-        // Crear un cliente de ejemplo en la base de datos
-        $client = Client::factory()->create([
-            'RFC' => 'AGO150812H27',
-            // Incluir otros campos necesarios para el cliente
+        // Asegúrate de usar un RFC que sabes que no existe en la base de datos
+        $response = $this->getJson('/api/clients/by-rfc/NONEXISTENTRFC');
+
+        $response->assertStatus(404);
+        $response->assertJson([
+            'error' => 'Cliente no encontrado',
         ]);
+        $response->assertJsonStructure([
+            'error',
+            'paises',
+            'usos_cfdi',
+            'regimen_fiscal',
+            'pagos',
+            'metodos'
+        ]);
+    }
 
-        // Mockear los catálogos necesarios
-        DirSatPais::shouldReceive('all')->andReturn([]);
-        SatUsoCFDI::shouldReceive('all')->andReturn([]);
-        SatRegFisc::shouldReceive('all')->andReturn([]);
-        PagoForma::shouldReceive('all')->andReturn([]);
-        PagoMetodo::shouldReceive('all')->andReturn([]);
+    public function testGetClientByRFCFound()
+    {
+        // Asegúrate de usar un RFC que sabes que existe en la base de datos
+        $client = Client::first();  // Obtiene el primer cliente disponible como ejemplo
+        $response = $this->getJson('/api/clients/by-rfc/' . $client->RFC);
 
-        // Llamar al método getByRFC del controlador con el RFC del cliente creado
-        $controller = new ClientController();
-        $response = $controller->getByRFC('RFC_DE_EJEMPLO');
-
-        // Verificar que la respuesta tenga un código de estado 200 (OK)
-        $this->assertEquals(200, $response->getStatusCode());
-
-        // Verificar que la respuesta sea un JSON
-        $this->assertJson($response->getContent());
-
-        // Verificar que la respuesta incluya la información del cliente y los catálogos
-        $this->assertArrayHasKey('nombre', $response->json());
-        $this->assertArrayHasKey('rfc', $response->json());
-        // Agregar más verificaciones para otros campos del cliente y catálogos si es necesario
+        $response->assertStatus(200);
+        $response->assertJsonStructure([
+            'nombre',
+            'rfc',
+            'pais',
+            'cp',
+            'pobla',
+            'ciudad',
+            'estado',
+            'colonia',
+            'calle',
+            'numeroexterior',
+            'numerointerior',
+            'UsoCFDI',
+            'regimenFiscal',
+            'pagoForma',
+            'PagoMetodo',
+            'email',
+            'paises',
+            'usos_cfdi',
+            'regimen_fiscal',
+            'pagos',
+            'metodos',
+            'cps',
+            'colonias'
+        ]);
     }
 }

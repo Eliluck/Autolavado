@@ -16,8 +16,9 @@ class CheckRFCControllerTest extends TestCase
      */
     public function testCheckExistingRFC()
     {
-        $response = $this->postJson('/routers/web/check-rfc', [
-            'RFC' => 'AGO150812H27',  // Asegúrate de que este RFC realmente exista en tu base de datos.
+        $response = $this->postJson('/web/check-rfc', [
+            'RFC' => 'XYZ123456789',  // Asegúrate de que este RFC realmente exista en tu base de datos.
+            'sucursal' => 'Sucursal Principal'
         ]);
 
         $response->assertStatus(200);
