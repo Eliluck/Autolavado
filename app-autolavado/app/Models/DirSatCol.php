@@ -47,9 +47,9 @@ class DirSatCol extends Model
     public static function getByPostalCode($cp)
     {
         // Retrieve all colonies associated with the given postal code
-        $colonies = static::where('CP', $cp)->get();
+        $colonias = static::where('CP', $cp)->get();
         // Log the retrieval of colonies for the given postal code
         Log::info("Retrieved colonies for postal code: $cp");
-        return $colonies;
+        return $colonias;
     }
 }

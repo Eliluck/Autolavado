@@ -15,11 +15,18 @@ class CheckRFCController extends Controller
      */
     public function checkRFC(Request $request)
     {
+    try {
+        // Registrar el recibimiento de la solicitud
+        Log::info("Recibida solicitud para verificar RFC", ['data' => $request->all()]);
+
         // Validar la solicitud de entrada
-        $request->validate([
+        $validated = $request->validate([
             'rfc' => 'required|string|max:20',
-            'sucursal' => 'required|string|max:50', // Agregar validación para la sucursal
+            'sucursal' => 'required|string|max:50',
         ]);
+
+        // Registrar datos validados
+        Log::info("Datos validados para la consulta de RFC", ['validated' => $validated]);
 
         // Obtener el RFC y la sucursal de la solicitud
         $rfc = $request->input('rfc');
@@ -29,17 +36,35 @@ class CheckRFCController extends Controller
         $request->session()->put('sucursal', $sucursal);
         $request->session()->put('rfc', $rfc);
 
+        // Registrar el guardado en la sesión
+        Log::info("RFC y sucursal guardados en la sesión", ['rfc' => $rfc, 'sucursal' => $sucursal]);
+
         // Buscar el RFC en la base de datos
         $client = Client::where('rfc', $rfc)->first();
 
-        // Registrar información en el log de Laravel
-        Log::info("Consulta de RFC: RFC=$rfc, Sucursal=$sucursal");
+        // Registrar intento de búsqueda
+        Log::info("Intentando buscar en la base de datos", ['rfc' => $rfc]);
 
-        // Verificar si el RFC existe
+        // Registrar el resultado de la búsqueda
         if ($client) {
+            Log::info("RFC encontrado en la base de datos", ['rfc' => $rfc]);
             return response()->json(['exists' => true]);
         } else {
+            Log::info("RFC no encontrado en la base de datos", ['rfc' => $rfc]);
             return response()->json(['exists' => false]);
         }
+    } catch (\Exception $e) {
+        // Registrar el error en el log
+        Log::error("Error en la consulta de RFC", [
+            'exception' => $e->getMessage(),
+            'trace' => $e->getTraceAsString(), // Incluir el stack trace para mayor detalle
+            'rfc' => $rfc ?? 'N/A',
+            'sucursal' => $sucursal ?? 'N/A'
+        ]);
+
+        // Devolver una respuesta JSON indicando el error
+        return response()->json(['error' => 'Error procesando la solicitud'], 500);
     }
+  }
 }
+

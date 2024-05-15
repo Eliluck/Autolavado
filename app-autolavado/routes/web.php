@@ -31,7 +31,7 @@ Route::get('/colonies/{cp}', [DirSatColController::class, 'getByCP']);
 Route::get('/postal-codes/{countryCode}', [DirSatCPController::class, 'byCountryCode']);
 
 // Ruta para obtener el estado basado en un código postal, esta ruta es del controlador DirSatEdoController
-Route::get('/state-by-cp/{cp}', [DirSatEdoController::class, 'getEstadoPorCP']);
+Route::get('/estado/{cp}', [DirSatEdoController::class, 'getEstadoPorCP']);
 
 // Ruta para obtener la localidad basada en un código postal, esta ruta es del controlador DirSatLocController
 Route::get('/locality-by-cp/{postalCode}', [DirSatLocController::class, 'getByPostalCode']);

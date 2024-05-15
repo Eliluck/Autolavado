@@ -17,7 +17,7 @@ class Client extends Model
         'Exportado', 'Vigencia', 'TipoWeb', 'Activo', 'PagoForma', 'PagoFormaDesc', 'PagoCuenta',
         'PrePago', 'PrePagoDias', 'password', 'UsoCFDI', 'PagoMetodo', 'moneda', 'ValMoneda',
         'ValCredito', 'pagoBanco', 'ApSrv1', 'ApSrv2', 'CodAct', 'CodActReg', 'TLIRegApl',
-        'TLIRegArt', 'TLIVisitaSuc', 'TLIVisitaFch', 'Ocupado', 'OcupadoSuc', 'Regimen'
+        'TLIRegArt', 'TLIVisitaSuc', 'TLIVisitaFch', 'Ocupado', 'OcupadoSuc', 'Regimen', 'sucursal'
     ];
     protected $casts = [
         'DIAS' => 'float', 'CREDITO' => 'float', 'DESC1' => 'float', 'DESC2' => 'float',
