@@ -1,0 +1,93 @@
+@font-face {
+	font-family: "Flaticon";
+	src: 
+		url("fonts/Flaticon.woff") format("woff"),
+		url("fonts/Flaticon.ttf") format("truetype"),
+		url("fonts/Flaticon.svg#Flaticon") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	@font-face {
+		font-family: "Flaticon";
+		src: url("fonts/Flaticon.svg#Flaticon") format("svg");
+	}
+}
+
+.fimanager:before {
+	display: inline-block;
+	font-family: "Flaticon";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: 1;
+	text-decoration: inherit;
+	text-rendering: optimizeLegibility;
+	text-transform: none;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+.flaticon-001-brake-disc:before { content: "\f100"; }
+.flaticon-002-air-blower:before { content: "\f101"; }
+.flaticon-003-car-wash:before { content: "\f102"; }
+.flaticon-004-brush:before { content: "\f103"; }
+.flaticon-005-car-service:before { content: "\f104"; }
+.flaticon-006-car-service:before { content: "\f105"; }
+.flaticon-007-car-service:before { content: "\f106"; }
+.flaticon-008-car-service:before { content: "\f107"; }
+.flaticon-009-car-service:before { content: "\f108"; }
+.flaticon-010-glass-cleaning:before { content: "\f109"; }
+.flaticon-011-car-service:before { content: "\f10a"; }
+.flaticon-012-car-service:before { content: "\f10b"; }
+.flaticon-013-polish:before { content: "\f10c"; }
+.flaticon-014-brush:before { content: "\f10d"; }
+.flaticon-015-mat:before { content: "\f10e"; }
+.flaticon-016-microfiber:before { content: "\f10f"; }
+.flaticon-017-bus:before { content: "\f110"; }
+.flaticon-018-car-service:before { content: "\f111"; }
+.flaticon-019-car-service:before { content: "\f112"; }
+.flaticon-020-car-wash:before { content: "\f113"; }
+.flaticon-021-seat:before { content: "\f114"; }
+.flaticon-022-sponge:before { content: "\f115"; }
+.flaticon-023-car:before { content: "\f116"; }
+.flaticon-024-tire:before { content: "\f117"; }
+.flaticon-025-tire:before { content: "\f118"; }
+.flaticon-026-car-wash:before { content: "\f119"; }
+.flaticon-027-car-wash:before { content: "\f11a"; }
+.flaticon-028-car-wash:before { content: "\f11b"; }
+.flaticon-029-vacuum-cleaner:before { content: "\f11c"; }
+.flaticon-030-clipboard:before { content: "\f11d"; }
+
+$font-Flaticon-001-brake-disc: "\f100";
+$font-Flaticon-002-air-blower: "\f101";
+$font-Flaticon-003-car-wash: "\f102";
+$font-Flaticon-004-brush: "\f103";
+$font-Flaticon-005-car-service: "\f104";
+$font-Flaticon-006-car-service: "\f105";
+$font-Flaticon-007-car-service: "\f106";
+$font-Flaticon-008-car-service: "\f107";
+$font-Flaticon-009-car-service: "\f108";
+$font-Flaticon-010-glass-cleaning: "\f109";
+$font-Flaticon-011-car-service: "\f10a";
+$font-Flaticon-012-car-service: "\f10b";
+$font-Flaticon-013-polish: "\f10c";
+$font-Flaticon-014-brush: "\f10d";
+$font-Flaticon-015-mat: "\f10e";
+$font-Flaticon-016-microfiber: "\f10f";
+$font-Flaticon-017-bus: "\f110";
+$font-Flaticon-018-car-service: "\f111";
+$font-Flaticon-019-car-service: "\f112";
+$font-Flaticon-020-car-wash: "\f113";
+$font-Flaticon-021-seat: "\f114";
+$font-Flaticon-022-sponge: "\f115";
+$font-Flaticon-023-car: "\f116";
+$font-Flaticon-024-tire: "\f117";
+$font-Flaticon-025-tire: "\f118";
+$font-Flaticon-026-car-wash: "\f119";
+$font-Flaticon-027-car-wash: "\f11a";
+$font-Flaticon-028-car-wash: "\f11b";
+$font-Flaticon-029-vacuum-cleaner: "\f11c";
+$font-Flaticon-030-clipboard: "\f11d";

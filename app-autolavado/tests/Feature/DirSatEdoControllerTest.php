@@ -12,13 +12,13 @@ class DirSatEdoControllerTest extends TestCase
      *
      * @return void
      */
-    public function testGetEstadoPorCP()
+    public function testGetEstadoPorEdoCod()
     {
-        Log::info('Iniciando prueba: testGetEstadoPorCP');
+        Log::info('Iniciando prueba: testGetEstadoPorEdoCod');
 
         // Asumiendo que '01100' debería retornar al menos un resultado
-        Log::info('Realizando solicitud GET para obtener estado por CP', ['cp' => '01201']);
-        $response = $this->getJson('/estado/01201'); // Ajusta esta ruta según la definición de tus rutas API
+        Log::info('Realizando solicitud GET para obtener estado por EdoCod', ['EdoCod' => 'BCN']);
+        $response = $this->getJson('/estado/BCN'); // Ajusta esta ruta según la definición de tus rutas API
 
         Log::info('Verificando estado de la respuesta y estructura del JSON');
         $response->assertStatus(200)
@@ -26,7 +26,7 @@ class DirSatEdoControllerTest extends TestCase
                      '*' => [ // Usamos '*' si esperamos un array de estados, o elimina '*' si esperas un objeto único
                          'EdoNom',
                          'EdoCod',
-                         'CP'
+                         'Pais'
                      ]
                  ]);
 

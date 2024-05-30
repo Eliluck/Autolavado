@@ -1,0 +1,374 @@
+@include media-breakpoint-up(md){
+	h1, .h1 {
+		font-size: (35/16) + rem;
+	}
+
+	h2, .h2 {
+		font-size: (35/16) + rem;
+	}
+
+	h3, .h3 {
+		font-size: (30/16) + rem;
+	}
+
+	.h1Large {
+		font-size: (50/16) + rem;
+	}
+
+	.h2Large {
+		font-size: (40/16) + rem;
+	}
+
+	.h3Small {
+		font-size: (26/16) + rem;
+	}
+
+	.h3Medium {
+		font-size: (20/16) + rem;
+	}
+
+	.h3Large {
+		font-size: (22/16) + rem;
+	}
+
+	.introBlockWrap {
+
+		.contactWidget {
+			bottom: -100px;
+		}
+	}
+
+	.photoGalleryBlock {
+
+		.filterList {
+
+			li {
+				margin-right: 7px;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.mainNavigation {
+
+		.ddohOpener {
+			@include pseudo(after, 100%, 0, auto, 0);
+
+			&:hover {
+
+				&:after {
+					pointer-events: auto;
+				}
+			}
+
+			&:after {
+				height: 24px;
+				pointer-events: none;
+			}
+		}
+	}
+
+	.cbbPageList {
+		font-size: 18px;
+	}
+
+	.btnRefLink {
+		font-size: 18px;
+	}
+
+	.esColumn {
+		transition: none;
+	}
+
+	.sbSlider {
+		max-width: none;
+
+		.esColumn {
+			opacity: 1;
+		}
+
+		.slick-list{
+			padding-bottom: 30px;
+			overflow: visible !important;
+		}
+
+		.slickDotsv2 {
+			margin-top: 10px !important;
+		}
+	}
+
+	.galleryPhotoSlider {
+
+		.ssArrowVii {
+			top: -45px;
+
+			&.slickPrev {
+				left: 10px;
+			}
+
+			&.slickNext {
+				left: 70px;
+			}
+		}
+	}
+
+	.cabCounterList {
+		max-width: none;
+
+		li {
+			width: unset;
+		}
+	}
+
+	.expWatermark {
+		font-size: 506px;
+	}
+
+	.ssArrowVii {
+		@include size(50px);
+	}
+
+	.getDirColumn {
+		max-width: unset;
+	}
+
+	.requestCallAside {
+
+		.formWrap {
+			padding: 50px 15px;
+		}
+	}
+
+	.pgLinkGo {
+		@include size(40px);
+		font-size: 14px;
+	}
+
+	.dcsTabset {
+
+		&,
+		&.nav-tabs {
+
+			.nav-link {
+				font-size: 20px;
+				padding: 16px 30px;
+			}
+		}
+	}
+
+	.serviceListView {
+
+		> li {
+			width: 33.3333%;
+		}
+	}
+
+	.page_404 {
+
+		.header-404 {
+			font-size: 150px;
+			line-height: 150px;
+		}
+	}
+
+	.alertCollapseWrap {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+
+	.checkoutCountTable {
+
+		.col01 {
+			width: 65%;
+		}
+	}
+
+	.postNavigatorNav {
+
+		.btnPrev,
+		.btnNext {
+			font-size: 15px;
+			@include size(52px);
+		}
+	}
+
+	.dsSortDropdown {
+		margin-right: 0;
+	}
+
+	.proItemCol {
+		max-width: unset;
+	}
+
+	.fpList {
+
+		.imgWrap {
+			margin: 0 0.5em 4px 0;
+			width: 70px;
+		}
+
+		h4 {
+			font-size: 17px;
+		}
+	}
+
+	.pcColumnsWrapVII {
+
+		.col + .col {
+
+			&:before {
+				left: 0;
+				top: 40%;
+				transform: rotate(-45deg) translateX(0);
+			}
+		}
+	}
+
+	.drItemRow {
+
+		.btnDownload {
+			right: 28px;
+		}
+	}
+
+	.superPowerTeamSection {
+
+		.cabCounterList {
+
+			li {
+				margin-right: 30px;
+			}
+		}
+	}
+
+	.seeBenefitsAside {
+
+		.fabFeaturesList {
+
+			li {
+				flex: 0 0 25%;
+				min-width: 25%;
+			}
+		}
+
+		&.seeBenefitsAsideVII {
+
+			.fabFeaturesList {
+
+				li {
+					flex: 0 0 33.3333%;
+					min-width: 33.3333%;
+				}
+			}
+		}
+
+		&.styleAlt {
+
+			.fabFeaturesList {
+
+				li:last-child {
+
+					&:after {
+						content: none;
+					}
+				}
+			}
+		}
+	}
+
+	.fakeRadioInput {
+		max-width: 170px;
+	}
+
+	.ourGallerySection {
+
+		&:before {
+			width: 90%;
+		}
+
+		&:after {
+			width: 90%;
+		}
+	}
+
+	.ourGallerySlider {
+
+		.slick-arrow {
+
+			&.slickPrev {
+				left: 10px;
+			}
+
+			&.slickNext {
+				left: 74px;
+			}
+		}
+
+		.slick-list {
+			margin-right: -55px !important;
+		}
+	}
+
+	.hdMainDropdown {
+		min-width: 8rem;
+
+		.dropdown-item {
+			padding: 9px 10px;
+		}
+	}
+
+	.hdDropdownList {
+
+		a {
+			padding: 5px 8px;
+		}
+	}
+
+	.ddohOpener{
+
+		&:hover{
+
+			> .desktopDropOnHover{
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+		}
+	}
+
+	.customCheckboxLabel {
+
+		.cuFakeLabel {
+			padding-left: 30px;
+		}
+	}
+
+	.getDiscountAside {
+
+		.h4 {
+			font-size: 30px;
+			line-height: (35/30);
+		}
+	}
+
+	.cartTotals {
+		min-width: unset; 
+	}
+
+	.bpCommentsList {
+	
+		.bpChildCommentsList {
+
+			.cmntWrap {
+				padding-left: 100px;
+			}
+		}
+	}
+
+	.cuMapBlock {
+
+		.cuMapHolder {
+			min-height: 350px;
+		}
+	}
+}

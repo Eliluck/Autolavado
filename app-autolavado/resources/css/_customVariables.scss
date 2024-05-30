@@ -1,0 +1,365 @@
+// Color system
+$white:    #fff !default;
+$gray-100: #f6f6f6;
+$gray-200: #e5e5e5;
+$gray-300: #ecedf5;
+$gray-400: #cccccc;
+$gray-500: #8c89a2;
+$gray-600: #62718d;
+$gray-700: #888888;
+$gray-800: #263787;
+$gray-900: #06163a;
+$black:    #000 !default;
+
+$clr1:	#2d3e8e;
+$clr2:	#edf5f9;
+$clr3:	#a0abdc;
+$clr4:	#9aa2c9;
+$clr5:	#e5e5e9;
+$clr6:	#e8e8e8;
+$clr7:	#f5592f;
+$clr8:	#f9af3b;
+$clr9:	#4bd48b;
+$clr10:	#a3b0c7;
+$clr11:	#919baf;
+$clr12:	#ef3139;
+$clr13:	#222222;
+$clr14:	#0067da;
+$clr15:	#202b5d;
+$clr16:	#bcbfce;
+$clr17:	#ee4118;
+$clr18:	#e0e0e0;
+$clr19:	#a6afbd;
+$clr20:	#42516d;
+$clr21:	#7d87b8;
+$clr22:	#b0b8c6;
+$clr23:	#ebf2f5;
+$clr24:	#9da2ba;
+$clr25:	#99a4b8;
+$clr26:	#e2e2e2;
+
+$facebook:	#3b5998;
+$twitter:	#18a6f0;
+$pinterest:	#dd4b39;
+$linkedin:	#4c5fd7;
+$youtube:	#ff0000;
+
+$grays: ();
+$grays: map-merge(
+	(
+		"100": $gray-100,
+		"200": $gray-200,
+		"300": $gray-300,
+		"400": $gray-400,
+		"500": $gray-500,
+		"600": $gray-600,
+		"700": $gray-700,
+		"800": $gray-800,
+		"900": $gray-900
+	),
+	$grays
+);
+
+$blue:    #263788;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #ff88ac;
+$red:     #dc3545 !default;
+$orange:  #f68773;
+$yellow:  #eec139;
+$green:   #39b972;
+$teal:    #20c997 !default;
+$cyan:    #2db7ff;
+
+$colors: ();
+$colors: map-merge(
+	(
+		"blue":       $blue,
+		"indigo":     $indigo,
+		"purple":     $purple,
+		"pink":       $pink,
+		"red":        $red,
+		"orange":     $orange,
+		"yellow":     $yellow,
+		"green":      $green,
+		"teal":       $teal,
+		"cyan":       $cyan,
+		"white":      $white,
+		"gray":       $gray-600,
+		"gray-dark":  $gray-800
+	),
+	$colors
+);
+
+$primary:       $blue;
+$secondary:     $cyan;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $pink;
+$light:         $gray-100;
+$dark:          $gray-900;
+
+$theme-colors: ();
+$theme-colors: map-merge(
+	(
+		"primary":    $primary,
+		"secondary":  $secondary,
+		"success":    $success,
+		"info":       $info,
+		"warning":    $warning,
+		"danger":     $danger,
+		"light":      $light,
+		"light2":     $clr2,
+		"dark":       $dark,
+		"dark2":      $gray-800
+	),
+	$theme-colors
+);
+
+$wpThemeColor: $primary;
+$wpThemeColor2: $cyan;
+
+// Options
+$enable-shadows:	true;
+$enable-print-styles:	false;
+$enable-validation-icons:	false;
+$enable-deprecation-messages:	false;
+
+// Spacing
+$spacer: 5px;
+$spacers: ();
+$spacers: map-merge(
+	(
+		0: 0,
+		1: $spacer,
+		2: ($spacer * 2),
+		3: ($spacer * 3.2),
+		4: ($spacer * 4),
+		5: ($spacer * 5),
+		6: ($spacer * 6),
+		7: ($spacer * 7),
+		8: ($spacer * 8),
+		9: ($spacer * 9),
+		10: ($spacer * 10),
+		11: ($spacer * 11),
+		12: ($spacer * 12),
+		13: ($spacer * 13),
+		14: ($spacer * 14),
+		15: ($spacer * 15),
+		16: ($spacer * 16),
+		17: ($spacer * 17),
+		18: ($spacer * 18),
+		19: ($spacer * 19),
+		20: ($spacer * 20),
+		21: ($spacer * 21),
+		22: ($spacer * 22),
+		23: ($spacer * 23),
+		24: ($spacer * 24),
+		25: ($spacer * 25),
+		26: ($spacer * 26),
+		27: ($spacer * 27),
+		28: ($spacer * 28),
+		29: ($spacer * 29),
+		30: ($spacer * 30),
+		31: ($spacer * 31),
+		32: ($spacer * 32),
+		33: ($spacer * 33),
+		34: ($spacer * 34),
+		35: ($spacer * 35),
+		36: ($spacer * 36),
+		37: ($spacer * 37),
+		38: ($spacer * 38),
+		39: ($spacer * 39),
+		40: ($spacer * 40),
+		41: ($spacer * 41),
+		42: ($spacer * 42),
+		43: ($spacer * 43),
+		44: ($spacer * 44),
+		45: ($spacer * 45),
+		46: ($spacer * 46),
+		47: ($spacer * 47),
+		48: ($spacer * 48),
+		49: ($spacer * 49),
+		50: ($spacer * 50),
+		51: ($spacer * 51),
+		52: ($spacer * 52),
+		53: ($spacer * 53),
+		54: ($spacer * 54),
+		55: ($spacer * 55),
+		56: ($spacer * 56),
+		57: ($spacer * 57),
+		58: ($spacer * 58),
+		59: ($spacer * 59),
+		60: ($spacer * 60)
+	),
+	$spacers
+);
+
+$sizes: ();
+$sizes: map-merge(
+	(
+		20: 20%,
+		25: 25%,
+		33: 33.333%,
+		50: 50%,
+		66: 66.667%,
+		80: 80%,
+		100: 100%,
+		auto: auto
+	),
+	$sizes
+);
+
+// Body
+$body-color:	$gray-600;
+
+// Links
+$link-color:	theme-color("secondary");
+$link-hover-color:	darken($link-color, 15%);
+$link-hover-decoration:	none;
+
+// Grid breakpoints
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	lgwd: 1025px,
+	xl: 1230px,
+	xlwd: 1440px,
+	xxl: 1920px
+);
+
+// Grid containers
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1200px,
+	xlwd: 1300px
+);
+
+// Components
+$border-color:	$gray-200;
+$border-radius:	0.5rem;
+$border-radius-lg:	1.625rem;
+$border-radius-sm:	0.25rem;
+$box-shadow-sm:	0 5px 20px rgba($dark, .1);
+$box-shadow:	0 10px 40px rgba($dark, .1);
+$box-shadow-lg:	0 10px 50px rgba($dark, .1);
+$component-active-bg:	theme-color("secondary");
+$transition-base:	all .3s ease;
+$transition-fade:	opacity .3s linear, visibility 0.3s ease;
+$transition-default:	color 0.3s ease, background-color 0.3s ease;
+$transition-collapse:	height .3s ease, transform .3s ease;
+
+// Typography
+$font-family-sans-serif:	"Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-alter:	"Fira Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-base:	$font-family-sans-serif;
+$font-size-base:	1.0625rem;
+$line-height-base:	(26/17);
+$h1-font-size:	(30);
+$h2-font-size:	(26);
+$h3-font-size:	(24);
+$h4-font-size:	(28);
+$h5-font-size:	(24);
+$h6-font-size:	(20);
+$headings-margin-bottom:	$spacer * 3;
+$headings-font-family:	$font-alter;
+$headings-font-weight:	500;
+$blockquote-font-size:	1.5rem;
+$hr-border-color:	$gray-200;
+
+// Tables
+$table-hover-bg:	$gray-300;
+$table-active-bg:	$table-hover-bg;
+$table-border-color:	$border-color;
+$table-head-bg:	theme-color("secondary");
+$table-head-color:	$white;
+$table-th-font-weight:	600;
+$table-dark-bg:	$gray-900;
+$table-dark-border-color:	lighten($table-dark-bg, 7.5%);
+
+// Buttons + Forms
+$input-btn-padding-y:	0.9375rem;
+$input-btn-padding-x:	1.5625rem;
+$input-btn-font-family:	$font-alter;
+$input-btn-font-size:	(18);
+$input-btn-focus-width:	0;
+$input-btn-focus-color:	rgba($component-active-bg, .25);
+$input-btn-focus-box-shadow:	0 0 0 $input-btn-focus-width $input-btn-focus-color;
+$input-btn-padding-y-sm:	0;
+$input-btn-padding-x-sm:	0;
+$input-btn-font-size-sm:	$input-btn-font-size;
+$input-btn-line-height-sm:	$input-btn-line-height;
+$input-btn-padding-y-lg:	0;
+$input-btn-padding-x-lg:	0;
+$input-btn-font-size-lg:	$input-btn-font-size;
+$input-btn-line-height-lg:	$input-btn-line-height;
+
+// Buttons
+$btn-padding-y:	$input-btn-padding-y;
+$btn-padding-x:	$input-btn-padding-x;
+$btn-font-family:	$input-btn-font-family;
+$btn-font-size:	$input-btn-font-size;
+$btn-line-height:	$input-btn-line-height;
+$btn-padding-y-sm:	$input-btn-padding-y-sm;
+$btn-padding-x-sm:	$input-btn-padding-x-sm;
+$btn-font-size-sm:	$input-btn-font-size-sm;
+$btn-line-height-sm:	$input-btn-line-height-sm;
+$btn-padding-y-lg:	$input-btn-padding-y-lg;
+$btn-padding-x-lg:	$input-btn-padding-x-lg;
+$btn-font-size-lg:	$input-btn-font-size-lg;
+$btn-line-height-lg:	$input-btn-line-height-lg;
+$btn-font-weight:	600;
+$btn-box-shadow:	0 1px 1px rgba($black, 0);
+$btn-active-box-shadow:	$btn-box-shadow;
+$btn-focus-width:	$input-btn-focus-width;
+$btn-focus-box-shadow:	$input-btn-focus-box-shadow;
+$btn-border-radius:	99px;
+$btn-border-radius-lg:	$btn-border-radius;
+$btn-border-radius-sm:	$btn-border-radius;
+$btn-transition:	color .3s ease, background-color .3s ease, border-color .3s ease;
+
+// Forms
+$input-padding-y:	$input-btn-padding-y;
+$input-padding-x:	$input-btn-padding-x;
+$input-font-family:	$input-btn-font-family;
+$input-font-size:	$input-btn-font-size;
+$input-font-weight:	$font-weight-light;
+$input-line-height:	$input-btn-line-height;
+$input-padding-y-sm:	$input-btn-padding-y-sm;
+$input-padding-x-sm:	$input-btn-padding-x-sm;
+$input-font-size-sm:	$input-btn-font-size-sm;
+$input-line-height-sm:	$input-btn-line-height-sm;
+$input-padding-y-lg:	$input-btn-padding-y-lg;
+$input-padding-x-lg:	$input-btn-padding-x-lg;
+$input-font-size-lg:	$input-btn-font-size-lg;
+$input-line-height-lg:	$input-btn-line-height-lg;
+$input-color:	$gray-500;
+$input-border-color:	$border-color;
+$input-border-width:	$input-btn-border-width;
+$input-box-shadow:	$btn-box-shadow;
+$input-border-radius:	99px;
+$input-border-radius-lg:	$input-border-radius;
+$input-border-radius-sm:	$input-border-radius;
+$input-focus-border-color:	lighten($component-active-bg, 25%);
+$input-focus-color:	$input-color;
+$input-focus-width:	$input-btn-focus-width;
+$input-focus-box-shadow:	$input-btn-focus-box-shadow;
+$input-placeholder-color:	$input-color;
+$input-height:	62px;
+$input-transition:	border-color .3s ease, box-shadow .3s ease;
+$custom-control-indicator-checked-box-shadow:	false;
+$custom-control-indicator-active-box-shadow:	false;
+$custom-checkbox-indicator-indeterminate-box-shadow:	false;
+
+// Navbar
+$navbar-nav-link-padding-x:	15px;
+$navbar-toggler-padding-y:	0;
+$navbar-toggler-padding-x:	0;
+$navbar-toggler-font-size:	14px;
+$navbar-toggler-border-radius:	0;
+$navbar-light-toggler-icon-bg:	none;

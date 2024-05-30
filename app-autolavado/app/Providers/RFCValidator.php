@@ -1,6 +1,9 @@
 <?php
+
 namespace App\Providers;
+
 use Illuminate\Support\Facades\Log;
+
 class RFCValidator
 {
     public function validate($inputRFC)
@@ -102,7 +105,3 @@ class RFCValidator
         Log::error($message);
     }
 }
-// Ejemplo de uso
-$inputRFC = "Your RFC here";
-$validator = new RFCValidator();
-$validator->validate($inputRFC);

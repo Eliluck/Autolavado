@@ -14,8 +14,8 @@ class DirSatCPControllerTest extends TestCase
     {
         Log::info('Iniciando prueba para la recuperación de registros de códigos postales por código de país.');
 
-        // Realizar la solicitud HTTP al endpoint
-        $countryCode = 'MEX'; // Asegúrate de que este código de país exista en tu base de datos
+        // Reali  zar la solicitud HTTP al endpoint
+        $countryCode = '25900'; // Asegúrate de que este código de país exista en tu base de datos
         Log::info("Realizando petición HTTP para obtener códigos postales para el país: $countryCode");
         $response = $this->getJson("/postal-codes/$countryCode");
 
@@ -23,7 +23,7 @@ class DirSatCPControllerTest extends TestCase
         Log::info('Verificando el estado de la respuesta y la estructura JSON.');
         $response->assertStatus(200)
                  ->assertJsonStructure([
-                     '*' => ['CP', 'PaisCod']  // Verifica que estos campos estén presentes en cada objeto del array JSON
+                     '*' => ['EdoCod', 'PaisCod', 'MunCod', 'LocCod']  // Verifica que estos campos estén presentes en cada objeto del array JSON
                  ]);
 
         Log::info('Prueba completada exitosamente para la recuperación de códigos postales por código de país.');

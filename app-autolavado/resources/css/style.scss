@@ -1,0 +1,305 @@
+/*
+	Theme Name: Autoglow - Car Washing Service & Auto Detail HTML Template
+	Author: Arklogics
+	Author URI:
+	Version: 1
+	Description: Autoglow theme for Wordpress
+	License: GNU General Public License v2 or later
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+	Text Domain: Autoglow
+	Tags: one-column, two-columns
+	Theme URI:https://themeforest.net/user/arklogics
+*/
+
+
+/*
+	1: Icomoon Icons Set / .icomoon
+	2: Linear Icons Set / .lnr
+	3: Slick Slider / .slick-slider
+	4: Fancybox / Lightbox Popup / .fancybox
+	5: Common Class Background Cover / .bgCover
+	6: Common Class Background Innerlay / .bgImg
+	7: Common Class Transition / .transition
+	8: Common Class Transition Color / .transitClrBg
+	9: Common Class Transition Background / .transitBg
+	10: Common Class Transition Color, Background, border / .transitClrBgBdr
+	11: Common Class Transition border / .transitBdr
+	12: Common Class Transition Opacity, Visibility / .transitOpVis
+	13: Common Class Vertical Align Wrap / .alignHolder
+	14: Common Class Font Family Base / .fontBase
+	15: Common Class Font Family Jost / .fontAlter
+	16: Common Class Font Wight Normal Important / .fwmMedium
+	17: Common Class Font Wight Medium / .fwMedium
+	18: Common Class Font Wight Semi Bold / .fwSemi
+	19: Common Class Pointer Events None / .inaccessible
+	20: Common Class Button Text Span / .btnText
+	21: Common Class Button / .btn
+	22: Common Class Theme Button / .btnTheme
+	23: Common Class Theme Button Two / .btnThemeAlt
+	24: Common Class Theme Button Alt Inverse / .btnThemeAltInverse
+	25: Common Class Theme Button White / .btnThemeWhite
+	26: Common Class Theme Button White Outline / .btnThemeWhiteOutline
+	27: Common Class Theme Button White Inverse / .btnThemeWhiteInverse
+	28: Common Class Button Grey / .btnGary
+	29: Page Main Wrapper / #pageWrapper
+	30: Heading Title / .hTitle
+	31: H1 Large / .h1Large
+	32: H2 Large / .h2Large
+	33: H3 Small / .h3Small
+	34: H3 Medium / .h3Medium
+	35: H3 Large / .h3Large
+	36: Text Font Size Medium / .fzMedium
+	37: Text Font Size Large / .fzLarge
+	38: Background Color Light / .bgLight
+	39: Page Header Sticky Wrap / .phStickyWrap
+	40: Page Main Header / #pageHeader
+	41: Page Header Fixer / .headerFixer
+	42: Page Header Logo / .logo
+	43: Page Header Navigation / #pageNav
+	44: Page Header Main Navigation / .mainNavigation
+	45: Dropdown Toggler / .dropdown-toggle
+	46: Page Header Button Link / .btnHdLink
+	47: User Actions List / .userActionsList
+	48: Page Navigation Search Opener / .navbarSearchOpener
+	49: Header Button / .btnHd
+	50: Intro Block Slider Column / .ibsColumn
+	51: Inner Page Banner / .innerPagesBanner
+	52: Inner Page Banner Breadcrumbs / .cbbPageList
+	53: Intro Block Slider / .ibsSlider
+	54: Slick Slider Arrow Style 1 / .slickArrowv1
+	55: Banner Aside Block / .bannerAsideBlock
+	56: Banner Aside Block Feature Column / .babFeatureColumn
+	57: Button Call To Link / .btnCalto
+	58: Main Navigation Burger Menu Opener / .pgNaveOpener
+	59: Page Navigation Collapse / .pageMainNavCollapse
+	60: Page Navbar Search Collapse / .navbarSearchCollapse
+	61: Page Navbar Search Form / .navSearchForm
+	62: Page Navbar Search Close Button / .navbarSearchClose
+	63: Slick Slider Dots Style 1 / .slickDotsv1
+	64: Image Holder Style 1 / .imgHolderv1
+	65: Image Holder Style 2 / .imgHolderv2
+	66: Background Pattern Style 1 / .bgPatternv1
+	67: Button Reference Link / .btnRefLink
+	68: Description Tag / .descrTag
+	69: Description Tag Style 1 / .descrTagv1
+	70: Services Column Slider / .sbSlider
+	71: Service Column / .esColumn
+	72: Service Column Caption / .esCaption
+	73: Slick Slider Dots Style 2 / .slickDotsv2
+	74: Counter Aside Block / .counterAsideBlock
+	75: Counter Aside Block Counter List / .cabCounterList
+	76: Counter Aside Block Alternative / .counterAsideBlockAlt
+	77: Experience Block / .experienceBlock
+	78: Experience Block Watermark Background / .expWatermark
+	79: Services List / .servicesList
+	80: Image Holder Caption / .imgHolderCap
+	81: Image Holder Caption Pin Wrap / .imhcPinWrap
+	82: Image Holder Caption Pin Wrap Style 1 / .imhcPinWrap1
+	83: Image Holder Caption Pin Wrap Style 2 / .imhcPinWrap2
+	84: Image Holder Caption Pin Wrap Style 3 / .imhcPinWrap3
+	85: Image Holder Caption Pin Opener / .imhcPinOpener
+	86: Image Caption / .imhcCaption
+	87: Price Column / .priceColumn
+	88: Default List Style / .listDefaultStyles
+	89: Price Column Features List / .pcFeaturesList
+	90: Number List / .numberList
+	91: Callout Aside Block Holder / .cabHolder
+	92: Background Pattern Style 2 / .bgPatternv2
+	93: Background Pattern Style 3 / .bgPatternv3
+	94: Location Area Holder Wrap / .pcColumnsWrap
+	95: Proccess Column / .processColumn
+	96: Logos/Sponsors Slider / .logosSlider
+	97: Locations Slider / .arddColumnSlider
+	98: Locations Aside Block / .cctBlock
+	99: Slick Slider Arrows Style 2 / .ssArrowVii
+	100: Contact Information List / .contactInfoList
+	101: Location Column / .getDirColumn
+	102: Client Testimonial Quote / .clientQuote
+	103: Client Testimonial Quotes Slider / .quotesSlider
+	104: Client Testimonial Quote Profile Pic / .profilePicWrap
+	105: Page Footer Area Wrap / .ftAreaWrap
+	106: Page Footer Connect Aside Block / .ftConnectAside
+	107: Page Footer Connect Navigation / .ftcaNav
+	108: Contact Connect Wrap / .ctConnectWrap
+	109: Page Footer Social Networks List / .ftSocialNetworks
+	110: Page Main Footer / #pageFooter
+	111: Page Footer Aside Inner Wrap / .footerAsideInnerWrap
+	112: Request Call Aside Block / .requestCallAside
+	113: Request Call Aside Time List / .rcaTimeList
+	114: Request Call Aside Form / .requstAcallForm
+	115: Custom Form Select Wrap / .coolSelectWrapper
+	116: Subscription Form / .subscritionForm
+	117: Photos Gallery Block / .photoGalleryBlock
+	118: Gallery Photo Column / .gPhoColumn
+	119: Page Link Go Button / .pgLinkGo
+	120: Filters List / .filterList
+	121: Gallery Photos Slider / .galleryPhotoSlider
+	122: Our Gallery Slider / .ourGallerySlider
+	123: Drop Caption / .dropCap
+	124: Feedback Slide Quote / .feedbackSlide
+	125: Feedback Features List / .fabFeaturesList
+	126: Feature Column / .featureColumn
+	127: Feature Column Classic / .ftColumnClassic
+	128: Feature Column Grid / .ftColumnGrid
+	129: Progress Top Wrap / .prgTopWrap
+	130: Progress Wrap / .progresWrap
+	131: Skills Rank List / .skillsRankList
+	132: Progress Bar / .progressBar
+	133: Testimonials Slider Style 1 / .testimonialSliderVI
+	134: Client Feedback Quote / .clientFeedback
+	135: Client Feedback Quote Style 2 / .clientQuoteii
+	136: Accordion Row / .ctaccRow
+	137: Accordion Opener / .ctaccOpener
+	138: FAQs Accordion / .faqAccordion
+	139: Tabset List / .dcsTabset
+	140: Tabset List Style 2 / .dcsTabsetVII
+	141: Default Table / .tableDefault
+	142: Message Box / .messageBox
+	143: Button Box / .btnBox
+	144: Contact Form / .contactForm
+	145: Contact Form Wrap / .ctFormWrap
+	146: Services List View / .serviceListView
+	147: Services view Box / .serviceViewBox
+	148: Pie Chart Wrapper / .pieWrapper
+	149: Page Not Found Style / .page_404
+	150: My Tabset Style / #myTab
+	151: Login Tabset Contetn / #loginTabContent
+	152: Fake Input / .fakeInput
+	153: Custom Form Checkbox / .customCheckboxLabel
+	154: Custom Form Radio / .customRadioBtnLabel
+	155: Checkout Alert Popup / .checkoutAlert
+	156: Alert Popup Button / .alertPopBtn
+	157: Alert Popup Collapse / .alertCollapseWrap
+	158: Login Alert Popup / #loginAlertPopup
+	159: Coupon Alert Popup / #couponAlertPopup
+	160: Billing Details Wrap / .bilingDetailsWrap
+	161: Confirmation Box Wrap / .confirmationBoxWrap
+	162: Checkout Count Table / .checkoutCountTable
+	163: Checkout Payment Method Wrap / .pmsWrap
+	164: Placeholder Only / .placeOrder
+	165: Checkout Payment Method Selection List / .pmSlctList
+	166: Portfolio Filters List / .ifbFiltersList
+	167: Load More Button / .btnLoadMore
+	168: Masonary Content Holder / .isoContentHolder
+	169: Gallery Photo Columns Grid / .gPhoColumnGrid
+	170: Gallery Photo Column Gallery / .gPhoColumnGallery
+	171: Post Navigation List Nav / .postNavigatorNav
+	172: Post Navigation List / .pnnPaginList
+	173: Share Aside Block / .saShareAside
+	174: Share Aside Social Networks List / .saSocialNetworks
+	175: Portfolio Meta List / .psMetaList
+	176: Sorting Wrapper Header / .ctSorterWrapHeader
+	177: Sorting Wrapper Header Dropdown / .dsSortDropdown
+	178: Rating Star List / .ratingList
+	179: Add To Cart Button Link / .btnAddToCart
+	180: Product Item Column / .proItemCol
+	181: Pagination / .pagination
+	182: Sidebar Widget Title / .widgetTitile
+	183: Widget/Tag List / .tagList
+	184: Sidebar Widget Featured Products List / .fpList
+	185: Get Search Results Wrap / .getResultsWrap
+	186: Sidebar Widget Category List / .wCatList
+	187: Sidebar Widget Search Form / .searchForm
+	188: Product Quantity Input / .quantity
+	189: Cart Details Table / .cartTable
+	190: Cart Details Table Wrap / .cartTableWrap
+	191: Cart Totals Detail Table / .cartTotals
+	192: Single Product Description / .sdbWDescription
+	193: Cart Form / .cartForm
+	194: Single Product Wrap / .singleProductWrap
+	195: Reviews List / .reviewsList
+	196: Review Submit Form / .reviewSubmissionForm
+	197: Meet Team Column List / .mcssList
+	198: Meet Team Column / .mccColumn
+	199: About Block Description Column / .abtBlockColumn
+	200: Offer Choice Block / .offerYouChoiceSection
+	201: Video Box Wrap / .videoBoxWrap
+	202: Proccess Column Wrap Style 2 / .pcColumnsWrapVII
+	203: Default Dots List / .dotsList
+	204: Book Appointment Widget / .bookAppointmentWidget
+	205: Services Single Post / .serviceSingle
+	206: Widget Filter/Departs Nav / .widgetFiltersNav
+	207: Button Description Back / .btnDcsBack
+	208: Department Items Row / .drItemRow
+	209: Widget Help / .widgetHelp
+	210: Team Power Block / .superPowerTeamSection
+	211: Benefits Block / .seeBenefitsAside
+	212: Block Post Column / .blockPostColumn
+	213: Team Description Box / .tmcbDescriptionBox
+	214: Team Information List / .tmcbInfosList
+	215: Team Social Networks List / .tmcbSocialNetworks
+	216: Meet Column Separator / .mccSeprator
+	217: Education Information List / .edupiInfosList
+	218: Get Discount Aside Block / .getDiscountAside
+	219: Fake Radio Input / .fakeRadioInput
+	220: Custom Reviews Block / .customerReviewsBlock
+	221: FAQs Block / .faqSectionBlock
+	222: Contact Block / .contactSectionBlock
+	223: Address Column / .ardcColumn
+	224: Button Link Video Play / .btnYouPlay
+	225: Widget Gallery / .widgetGallery
+	226: Widget Recent News / .recentNewsWidget
+	227: Widget Author / .authorWidget
+	228: News Holder / .nwssHolder
+	229: Blog Share Dropdown Holder / .vssDropdownHolder
+	230: Blog Share Dropdown List / .vssDropdownList
+	231: Blog Single Post / .blogSinglePost
+	232: Widget Portfolio Information / .widgetProfilerInfo
+	233: Comments List Opener / .cmntListOpener
+	234: Comments List / .bpCommentsList
+	235: Widget Comments Wrap / .commentsWrapWidget
+	236: Booking System Wrap / .bookingSystemWrap
+	237: Booking System Form / .bookingForm
+	238: Extra Services Wrap / .extSerWrap
+	239: Products Slider / .productSlider
+	240: About Service Column / .abtServiceColumn
+	241: About Service Column Row / .abtServiceRow
+	242: Join Aside Block / .joinAsideBlock
+	243: Our Gallery Block / .ourGallerySection
+	244: Introduction Block / .introBlock
+	245: Back To Top Button Link / #backToTop
+	246: Page Loader Overlay / .loader-holder
+	247: Header Main Dropdown / .hdMainDropdown
+	248: Header Main Dropdown List / .hdDropdownList
+	249: Header Main Dropdown Submenu / .dropdown-submenu
+	250: Map Block / .cuMapBlock
+	251: ui widget ui widgetcontent styles / .ui-widget
+*/
+
+
+@import 'base/addComments';
+
+@import "vendor/bootstrap/functions";
+@import "vendor/bootstrap/variables";
+
+@import "customVariables";
+@import "vendor/bootstrap/mixins";
+@import "base/customMixins";
+@import "vendor/jqueryUi";
+@import 'base/wp-reset';
+
+@include inSelectorComment('Icomoon Icons Set');
+@import "vendor/icomoon";
+
+$lnr: ("Linear Icons Set": ".lnr");
+$cmnts: map-merge($cmnts, $lnr);
+@include inSelectorComment('Linear Icons Set');
+@import "vendor/linearicons";
+
+$slick: ("Slick Slider": ".slick-slider");
+$cmnts: map-merge($cmnts, $slick);
+@include inSelectorComment('Slick Slider');
+@import "vendor/slickSlider";
+
+$fancybox: ("Fancybox / Lightbox Popup": ".fancybox");
+$cmnts: map-merge($cmnts, $fancybox);
+@include inSelectorComment('Fancybox / Lightbox Popup');
+@import "vendor/fancyBox";
+
+@import "base/commonClasses";
+@import "all";
+
+@import 'animations';
+@import 'vendor/animate';
+
+//@include commentAll();

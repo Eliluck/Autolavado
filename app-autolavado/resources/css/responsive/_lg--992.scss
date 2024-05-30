@@ -1,0 +1,430 @@
+@include media-breakpoint-up(lg) {
+	h1, .h1 {
+		font-size: (40/16) + rem;
+	}
+
+	.phStickyWrap {
+		min-height: 75px;
+	}
+
+	.ibsColumn {
+		min-height: calc(100vh - 75px);
+	}
+
+	.filterList {
+		margin-right: 125px !important;
+	}
+
+	.galleryPhotoSlider {
+
+		.ssArrowVii {
+			top: -98px;
+
+			&.slickPrev {
+				left: auto;
+				right: 72px;
+			}
+
+			&.slickNext {
+				left: auto;
+				right: 10px;
+			}
+		}
+	}
+
+	.photoGalleryBlock {
+
+		.filterList {
+
+			li {
+				margin-right: 15px;
+			}
+		}
+	}
+
+	#pageHeader {
+		padding-top: 10px;
+
+		.mainNavigation {
+			border-top: 0;
+
+			&,
+			&.navbar-nav {
+
+				.nav-link {
+					color: $primary;
+
+					&:hover {
+						color: $secondary;
+					}
+				}
+			}
+		}
+	}
+
+	#pageNav {
+		padding-top: 0;
+	}
+
+	.mainNavigation {
+
+		&,
+		&.navbar-nav {
+
+			.nav-item {
+				margin-right: 15px;		
+			}
+
+			.nav-link {
+				padding: 0;
+			}
+		}
+
+		.navbar-expand-lg & {
+
+			.nav-link {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+
+		.ddohOpener {
+
+			&:after {
+				height: 32px;
+			}
+		}
+	}
+
+	.btnHd {
+		position: relative;
+		left: auto;
+		top: auto;
+		right: auto;
+
+		.btnText,
+		&:before {
+			padding: $btn-padding-y $btn-padding-x;
+			border-radius: $btn-border-radius;
+		}
+	}
+
+	.slickArrowv1 {
+		@include size(51px);
+
+		&:before {
+			@include size(16px);
+		}
+
+		&.slickPrev {
+
+			&:before {
+				margin-left: 10px;
+			}
+		}
+
+		&.slickNext {
+
+			&:before {
+				margin-right: 10px;
+			}
+		}
+	}
+
+	.pageMainNavCollapse {
+		position: static;
+		background-color: transparent !important;
+		transform: none;
+	}
+
+	.imgHolderv1 {
+		max-width: unset;
+	}
+
+	.btnRefLink {
+
+		.icn {
+			font-size: 30px;
+		}
+	}
+
+	.descrTag {
+		padding: 17px 34px;
+	}
+
+	.cabCounterList {
+
+		.textCount {
+			font-size: 70px;
+		}
+
+		.cclColumnWrap {
+			font-size: 18px;
+		}
+	}
+
+	.imgHolderCap {
+		bottom: -182px;
+		max-width: 756px;
+	}
+
+	.imhcPinWrap1 {
+		margin-left: -248px;
+		margin-top: -190px;
+	}
+
+	.imhcPinWrap2 {
+		margin-top: -137px;
+	}
+
+	.imhcPinWrap3 {
+		margin-left: 186px;
+	}
+
+	.cabHolder {
+
+		.icn {
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 78px;
+			left: 49px;
+		}
+	}
+
+	.ftcaNav {
+
+		li {
+			margin: 0 0 5px;
+
+			+ li {
+				margin-left: 28px;
+			}
+		}
+	}
+
+	.requestCallAside {
+
+		&.requestCallAside {
+
+			.imgWrap {
+				width: 710px;
+				margin-left: -100px;
+			}
+		}
+	}
+
+	.pgLinkGo {
+		@include size(45px);
+		font-size: 16px;
+	}
+
+	.fabFeaturesList {
+
+		> li {
+			flex: 0 0 16.6666666667%;
+			min-width: 16.6666666667%;
+		}
+	}
+
+	.clientQuoteii {
+
+		&:after {
+			bottom: 22px;
+		}
+	}
+
+	.bilingDetailsWrap {
+
+		.formCol {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		.form-row {
+			margin-left: -10px;
+			margin-right: -10px;
+		}
+	}
+
+	.pnnPaginList {
+
+		h4,
+		.h4 {
+			font-size: 20px;
+		}
+	}
+
+	.ctSorterWrapHeader {
+		font-size: 18px;
+		line-height: (24/18);
+		margin-bottom: 40px;
+	}
+
+	.fpList {
+
+		.imgWrap {
+			margin: 0 0.8em 4px 0;
+		}
+
+		h4 {
+			font-size: 18px;
+		}
+	}
+
+	.getResultsWrap {
+
+		#amount {
+			font-size: 16px;
+		}
+	}
+
+	.bookAppointmentWidget {
+
+		.icn {
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 78px;
+		}
+	}
+
+	.superPowerTeamSection {
+
+		.cabCounterList {
+
+			li {
+				margin-right: 50px;
+			}
+		}
+
+		.videoBoxWrap {
+			max-width: unset;
+		}
+	}
+
+	.blockPostColumn {
+
+		&.blogClassicVII {
+			padding: 20px 20px 40px;
+
+			.fdbWrap {
+				padding: 30px 30px 40px;
+			}
+		}
+	}
+
+	.tmcbDescriptionBox {
+
+		.imgHolder {
+			height: auto;
+		}
+	}
+
+	.getDiscountAside {
+
+		.h4 {
+			font-size: 36px;
+		}
+	}
+
+	.fakeRadioInput {
+		max-width: 200px;
+
+		.fake_label {
+			font-size: 18px;
+		}
+	}
+
+	.widgetGallery {
+
+		ul {
+			max-width: unset;
+		}
+	}
+
+	.ourGallerySection {
+
+		&:before,
+		&:after {
+			width: 80%;
+		}
+	}
+
+	.introBlockWrap {
+
+		.contactWidget {
+			bottom: -57px;
+		}
+	}
+
+	.hdMainDropdown {
+		box-shadow: $dropdown-box-shadow;
+		// border: 1px solid rgba($dropdown-border-color, 0.15);
+		margin-top: 26px;
+		min-width: 165px;
+	}
+
+	.dropdown-submenu {
+
+		&.show {
+
+			.dropdown-menu {
+
+				.dropdown-item {
+					padding-left: 15px;
+				}
+
+				&.show {
+
+					.dropdown-menu {
+
+						.dropdown-item {
+							padding-left: 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.desktopDropOnHover {
+		display: block !important;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(5px);
+		transition: transform .35s ease, opacity .35s ease, visibility .35s ease, -webkit-transform .35s ease;
+	}
+
+	.ifbFiltersList {
+
+		li {
+			margin-bottom: 10px;
+		}
+	}
+
+	.ourGallerySlider {
+
+		.slick-arrow {
+			bottom: -70px;
+			top: auto;
+
+			&.slickPrev {
+				left: -310px;
+			}
+
+			&.slickNext {
+				left: -251px;
+			}
+		}
+
+		.slick-list {
+			margin: 0 -100px 0 0 !important;
+		}
+	}
+
+	.cuMapBlock {
+
+		.cuMapHolder {
+			min-height: 400px;
+		}
+	}
+}

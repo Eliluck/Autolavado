@@ -1,0 +1,170 @@
+@include media-breakpoint-up(xlwd){
+	h1, .h1 {
+		font-size: (48/16) + rem;
+	}
+
+	.h1Large {
+		font-size: (74/16) + rem;
+	}
+
+	.phStickyWrap {
+		min-height: 101px;
+	}
+
+	.ibsColumn {
+		min-height: calc(100vh - 101px);
+	}
+
+	#pageHeader {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.logo {
+		max-width: 148px;
+	}
+
+	#pageNav {
+		width: calc(100% - 158px);
+	}
+
+	.mainNavigation {
+
+		&,
+		&.navbar-nav {
+
+			.nav-item {
+				margin-right: 24px;
+			}
+		}
+	}
+
+	.btnHdLink {
+		font-size: 22px;
+	}
+
+	.userActionsList {
+
+		> li {
+			margin-left: 25px;
+
+			> a {
+				font-size: 25px;
+			}
+		}
+	}
+
+	.navbarSearchOpener {
+		font-size: 25px;
+	}
+
+	.btnHd {
+		min-width: 210px;
+		font-size: 18px;
+	}
+
+	.ibsColumn {
+		font-size: 22px;
+	}
+
+	.esColumn {
+
+		.descriptWrap {
+			font-size: 18px;
+		}
+	}
+
+	.imgHolderCap {
+		bottom: -212px;
+		max-width: 866px;
+	}
+
+	.imhcPinWrap1 {
+		margin-left: -278px;
+		margin-top: -210px;
+	}
+
+	.imhcPinWrap2 {
+		margin-top: -154px;
+	}
+
+	.imhcPinWrap3 {
+		margin-left: 216px;
+	}
+
+	.arddColumnSlider {
+
+		.slick-arrow {
+			left: -264px;
+
+			&.slickPrev {
+				left: -324px;
+			}
+		}
+	}
+
+	.testimonialSliderVI {
+
+		.slickPrev {
+			left: -85px;
+		}
+
+		.slickNext {
+			right: -85px;
+		}
+	}
+
+	.serviceListView {
+
+		> li {
+			width: 16.666%;
+		}
+	}
+
+	.pnnPaginList {
+
+		li {
+			width: calc(50% - 80px);
+		}
+	}
+
+	.productSlider {
+
+		.ssArrowVii {
+
+			&.slickPrev {
+				left: -60px;
+			}
+
+			&.slickNext {
+				right: -60px;
+			}
+		}
+	}
+
+	.ourGallerySlider {
+
+		.slick-arrow {
+			bottom: 30px;
+
+			&.slickPrev {
+				left: -423px;
+			}
+
+			&.slickNext {
+				left: -360px;
+			}
+		}
+	}
+
+	.hdMainDropdown {
+		margin-top: 37px;
+	}
+
+	.cuMapBlock {
+
+		.cuMapHolder {
+			min-height: 550px;
+		}
+	}
+}

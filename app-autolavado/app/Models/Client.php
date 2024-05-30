@@ -1,10 +1,17 @@
 <?php
+
 namespace App\Models;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
 class Client extends Model
 {
+
+
     protected $table = 'client';
+    protected $primaryKey = 'CLIENTE'; // Especifica la clave primaria
     public $timestamps = false;
     protected $fillable = [
         'CLIENTE', 'NOMBRE', 'CALLE', 'NUMERO', 'COLONIA', 'POBLA', 'CIUDAD', 'ESTADO', 'PAIS',
@@ -17,16 +24,16 @@ class Client extends Model
         'Exportado', 'Vigencia', 'TipoWeb', 'Activo', 'PagoForma', 'PagoFormaDesc', 'PagoCuenta',
         'PrePago', 'PrePagoDias', 'password', 'UsoCFDI', 'PagoMetodo', 'moneda', 'ValMoneda',
         'ValCredito', 'pagoBanco', 'ApSrv1', 'ApSrv2', 'CodAct', 'CodActReg', 'TLIRegApl',
-        'TLIRegArt', 'TLIVisitaSuc', 'TLIVisitaFch', 'Ocupado', 'OcupadoSuc', 'Regimen', 'sucursal'
+        'TLIRegArt', 'TLIVisitaSuc', 'TLIVisitaFch', 'Ocupado', 'OcupadoSuc', 'Regimen', 'Sucursal'
     ];
     protected $casts = [
         'DIAS' => 'float', 'CREDITO' => 'float', 'DESC1' => 'float', 'DESC2' => 'float',
         'DESC3' => 'float', 'DESC4' => 'float', 'DESC5' => 'float', 'SALDO' => 'float',
-        'PRECIO' => 'float', 'PROSPECT' => 'smallint', 'CORTE' => 'int', 'PrePago' => 'smallint',
-        'PrePagoDias' => 'int', 'bloqueado' => 'smallint', 'comision' => 'float', 'puntos' => 'int',
-        'Exportado' => 'smallint', 'Activo' => 'string', 'ValMoneda' => 'smallint', 'ValCredito' => 'smallint',
-        'Regimen' => 'string', 'SSMA_TimeStamp' => 'timestamp', 'Vigencia' => 'datetime', 'TLIRegApl' => 'smallint',
-        'Ocupado' => 'smallint'
+        'PRECIO' => 'float', 'PROSPECT' => 'integer', 'CORTE' => 'int', 'PrePago' => 'integer',
+        'PrePagoDias' => 'int', 'bloqueado' => 'integer', 'comision' => 'float', 'puntos' => 'int',
+        'Exportado' => 'integer', 'Activo' => 'string', 'ValMoneda' => 'int', 'ValCredito' => 'int',
+        'Regimen' => 'string', 'SSMA_TimeStamp' => 'timestamp', 'Vigencia' => 'datetime', 'TLIRegApl' => 'int',
+        'Ocupado' => 'int'
     ];
     protected static function booted()
     {

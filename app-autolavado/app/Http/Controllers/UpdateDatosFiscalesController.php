@@ -1,67 +1,65 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\Client;
-use Response;
+
 class UpdateDatosFiscalesController extends Controller
 {
     public function updateDatosFiscales(Request $request)
     {
         // Valida los parámetros enviados
         $request->validate([
-            'razon_social' => 'required',
-            'calle' => 'required',
-            'colonia' => 'required',
-            'numero_interior' => 'required',
-            'numero_exterior' => 'required',
-            'cp' => 'required',
-            'ciudad' => 'required',
-            'estado' => 'required',
-            'pais' => 'required',
-            'email' => 'required',
-            'rfc' => 'required',
+            'NOMBRE' => 'required',
+            'CALLE' => 'required',
+            'COLONIA' => 'required',
+            'POBLA' => 'required',
+            'numerointerior' => 'required',
+            'numeroexterior' => 'required',
+            'CP' => 'required',
+            'CIUDAD' => 'required',
+            'ESTADO' => 'required',
+            'PAIS' => 'required',
+            'CORREO' => 'required|email',
+            'RFC' => 'required',
         ]);
+
         // Actualiza los datos fiscales
-        $actualizado = $this->updateClienteDatosFiscales(
-            $request->input('razon_social'),
-            $request->input('calle'),
-            $request->input('colonia'),
-            $request->input('numero_interior'),
-            $request->input('numero_exterior'),
-            $request->input('cp'),
-            $request->input('ciudad'),
-            $request->input('estado'),
-            $request->input('pais'),
-            $request->input('email'),
-            $request->input('rfc')
-        );
+        $actualizado = $this->updateClienteDatosFiscales($request);
+
         if ($actualizado) {
-            return response()->json(['message' => 'Datos fiscales actualizados correctamente'], 200);
+            // Obtiene el cliente actualizado
+            $cliente = Client::where('RFC', $request->input('RFC'))->first();
+            return response()->json(['message' => 'Datos fiscales actualizados correctamente', 'cliente' => $cliente], 200);
         } else {
             return response()->json(['error' => 'Error al actualizar los datos fiscales'], 400);
         }
     }
-    private function updateClienteDatosFiscales($razon_social, $calle, $colonia, $numero_interior, $numero_exterior, $cp, $ciudad, $estado, $pais, $email, $rfc)
+
+    private function updateClienteDatosFiscales(Request $request)
     {
-        $cliente = Client::where('rfc', 'LIKE', '%' . trim($rfc) . '%')->first();
+        // Busca el cliente por RFC exacto
+        $cliente = Client::where('RFC', $request->input('RFC'))->first();
+
         if ($cliente) {
             $cliente->update([
                 'exportado' => 0,
-                'nombre' => strtoupper($razon_social),
-                'calle' => strtoupper($calle),
-                'colonia' => strtoupper($colonia),
-                'numerointerior' => strtoupper($numero_interior),
-                'numeroexterior' => strtoupper($numero_exterior),
-                'cp' => strtoupper($cp),
-                'ciudad' => strtoupper($ciudad),
-                'pobla' => strtoupper($ciudad),
-                'localidad' => strtoupper($ciudad),
-                'estado' => strtoupper($estado),
-                'pais' => strtoupper($pais),
-                'correo' => $email,
+                'NOMBRE' => $request->input('NOMBRE'),
+                'CALLE' => $request->input('CALLE'),
+                'COLONIA' => $request->input('COLONIA'),
+                'numerointerior' => $request->input('numerointerior'),
+                'numeroexterior' => $request->input('numeroexterior'),
+                'CP' => $request->input('CP'),
+                'CIUDAD' => $request->input('CIUDAD'),
+                'POBLA' => $request->input('POBLA'),
+                'ESTADO' => $request->input('ESTADO'),
+                'PAIS' => $request->input('PAIS'),
+                'CORREO' => $request->input('CORREO'),
             ]);
             return true;
         }
+
         return false;
     }
 }

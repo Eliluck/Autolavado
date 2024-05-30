@@ -1,0 +1,380 @@
+$bgCover: ("Common Class Background Cover": ".bgCover");
+$cmnts: map-merge($cmnts, $bgCover);
+@include inSelectorComment('Common Class Background Cover');
+.bgCover{
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+$bgImg: ("Common Class Background Innerlay": ".bgImg");
+$cmnts: map-merge($cmnts, $bgImg);
+@include inSelectorComment('Common Class Background Innerlay');
+.bgImg {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+}
+
+$transition: ("Common Class Transition": ".transition");
+$cmnts: map-merge($cmnts, $transition);
+@include inSelectorComment('Common Class Transition');
+.transition{
+	transition-duration: 0.3s;
+	transition-timing-function: ease;
+}
+
+$transitClr: ("Common Class Transition Color": ".transitClr");
+$cmnts: map-merge($cmnts, $transitClr);
+@include inSelectorComment('Common Class Transition Color');
+.transitClr{
+	transition-property: color;
+}
+
+$transitClrBg: ("Common Class Transition Color": ".transitClrBg");
+$cmnts: map-merge($cmnts, $transitClrBg);
+@include inSelectorComment('Common Class Transition Color, Background');
+.transitClrBg{
+	transition-property: color, background;
+}
+
+$transitBg: ("Common Class Transition Background": ".transitBg");
+$cmnts: map-merge($cmnts, $transitBg);
+@include inSelectorComment('Common Class Transition Background');
+.transitBg{
+	transition-property: background;
+}
+
+$transitClrBgBdr: ("Common Class Transition Color, Background, border": ".transitClrBgBdr");
+$cmnts: map-merge($cmnts, $transitClrBgBdr);
+@include inSelectorComment('Common Class Transition Color, Background, border');
+.transitClrBgBdr{
+	transition-property: color, background, border;
+}
+
+$transitBdr: ("Common Class Transition border": ".transitBdr");
+$cmnts: map-merge($cmnts, $transitBdr);
+@include inSelectorComment('Common Class Transition border');
+.transitBdr{
+	transition-property: border;
+}
+
+$transitOpVis: ("Common Class Transition Opacity, Visibility": ".transitOpVis");
+$cmnts: map-merge($cmnts, $transitOpVis);
+@include inSelectorComment('Common Class Transition Opacity, Visibility');
+.transitOpVis{
+	transition-property: opacity, visibility;
+}
+
+$alignHolder: ("Common Class Vertical Align Wrap": ".alignHolder");
+$cmnts: map-merge($cmnts, $alignHolder);
+@include inSelectorComment('Common Class Vertical Align Wrap');
+.alignHolder{
+	min-height: inherit;
+}
+
+$fontBase: ("Common Class Font Family Base": ".fontBase");
+$cmnts: map-merge($cmnts, $fontBase);
+@include inSelectorComment('Common Class Font Family Base');
+.fontBase{
+	font-family: $font-family-base !important;
+}
+
+$fontAlter: ("Common Class Font Family Jost": ".fontAlter");
+$cmnts: map-merge($cmnts, $fontAlter);
+@include inSelectorComment('Common Class Font Family Jost');
+.fontAlter{
+	font-family: $font-alter;
+}
+
+$fwmMedium: ("Common Class Font Wight Normal Important": ".fwmMedium");
+$cmnts: map-merge($cmnts, $fwmMedium);
+@include inSelectorComment('Common Class Font Wight Normal Important');
+.fwmMedium{
+	font-weight: 400 !important;
+}
+
+$fwMedium: ("Common Class Font Wight Medium": ".fwMedium");
+$cmnts: map-merge($cmnts, $fwMedium);
+@include inSelectorComment('Common Class Font Wight Medium');
+.fwMedium{
+	font-weight: 500 !important;
+}
+
+$fwSemi: ("Common Class Font Wight Semi Bold": ".fwSemi");
+$cmnts: map-merge($cmnts, $fwSemi);
+@include inSelectorComment('Common Class Font Wight Semi Bold');
+.fwSemi{
+	font-weight: 600 !important;
+}
+
+$inaccessible: ("Common Class Pointer Events None": ".inaccessible");
+$cmnts: map-merge($cmnts, $inaccessible);
+@include inSelectorComment('Common Class Pointer Events None');
+.inaccessible{
+	pointer-events: none;
+}
+
+$btnText: ("Common Class Button Text Span": ".btnText");
+$cmnts: map-merge($cmnts, $btnText);
+@include inSelectorComment('Common Class Button Text Span');
+.btnText{
+	padding: $btn-padding-y $btn-padding-x;
+	border: 2px solid transparent;
+	opacity: 1;
+	transform-origin: right center 0;
+	transform: translateY(0px) rotateX(0deg);
+	transform-style: preserve-3d;
+	transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+	width: 100%;
+	border-radius: $btn-border-radius;
+}
+
+$btn: ("Common Class Button": ".btn");
+$cmnts: map-merge($cmnts, $btn);
+@include inSelectorComment('Common Class Button');
+.btn{
+	font-weight: 500;
+	@include pseudo(before, 0, 0, 0, 0);
+
+	&:before{
+		content: attr(data-hover);
+		transform: translateY(50%) rotateX(90deg);
+		opacity: 0;
+		border-width: 2px;
+		border-style: solid;
+		transform-origin: right center 0;
+		transform-style: preserve-3d;
+		transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+		padding: $btn-padding-y $btn-padding-x;
+		border-radius: $btn-border-radius;
+	}
+
+	&:hover{
+
+		&:before{
+			transform: translateY(0px) rotateX(0deg);
+			opacity: 1;
+		}
+
+		.btnText{
+			opacity: 0;
+			transform: translateY(-50%) rotateX(90deg);
+		}
+	}
+
+	&.btnNoOver{
+		padding: $btn-padding-y $btn-padding-x;
+		border-radius: $btn-border-radius;
+
+		&:before{
+			display: none;
+		}
+	}
+
+	&.btnMinSmall{
+		min-width: 152px;
+
+		&:before,
+		.btnText {
+			padding-top: 0.282rem;
+			padding-bottom: 0.282rem;
+		}
+	}
+
+	&.btnMinMedium{
+		min-width: 172px;
+
+		&:before,
+		.btnText {
+			padding-top: 0.594rem;
+			padding-bottom: 0.594rem;
+		}
+	}
+
+	&.btnMinMediumAlt{
+		min-width: 176px;
+
+		&:before,
+		.btnText {
+			padding-top: 0.907rem;
+			padding-bottom: 0.907rem;
+		}
+	}
+
+	&.btnMinLarge{
+		min-width: 190px;
+
+		&:before,
+		.btnText {
+			padding-top: 0.907rem;
+			padding-bottom: 0.907rem;
+		}
+	}
+
+	&.btnMinXLarge{
+		min-width: 211px;
+
+		&:before,
+		.btnText {
+			padding-top: 1.219rem;
+			padding-bottom: 1.219rem;
+		}
+	}
+
+	&.btnLarge{
+		min-width: 222px;
+
+		&:before,
+		.btnText {
+			padding-top: 0.907rem;
+			padding-bottom: 0.907rem;
+		}
+	}
+}
+
+$btnTheme: ("Common Class Theme Button": ".btnTheme");
+$cmnts: map-merge($cmnts, $btnTheme);
+@include inSelectorComment('Common Class Theme Button');
+.btnTheme{
+
+	&.btnNoOver{
+		color: $white;
+
+		&:hover{
+			background-color: $white !important;
+		}
+	}
+
+	&:before{
+		background-color: $white;
+	}
+
+	.btnText{
+		color: $white;
+	}
+}
+
+$btnThemeAlt: ("Common Class Theme Button Two": ".btnThemeAlt");
+$cmnts: map-merge($cmnts, $btnThemeAlt);
+@include inSelectorComment('Common Class Theme Button Two');
+.btnThemeAlt{
+
+	&.btnNoOver{
+		color: $white;
+
+		&:hover{
+			background-color: $white !important;
+		}
+	}
+
+	&:before{
+		background-color: $white;
+	}
+
+	.btnText{
+		color: $white;
+	}
+}
+
+$btnThemeAltInverse: ("Common Class Theme Button Alt Inverse": ".btnThemeAltInverse");
+$cmnts: map-merge($cmnts, $btnThemeAltInverse);
+@include inSelectorComment('Common Class Theme Button Alt Inverse');
+.btnThemeAltInverse{
+
+	&.btnNoOver{
+		color: $white;
+
+		&:hover{
+			background-color: $white !important;
+		}
+	}
+
+	&:before{
+		color: $white;
+	}
+}
+
+$btnThemeWhite: ("Common Class Theme Button White": ".btnThemeWhite");
+$cmnts: map-merge($cmnts, $btnThemeWhite);
+@include inSelectorComment('Common Class Theme Button White');
+.btnThemeWhite{
+
+	&.btnNoOver{
+		background-color: $white;
+		border-color: $white;
+
+		&:hover{
+			color: $white !important;
+		}
+	}
+
+	&:before{
+		background-color: darken($white, 10%);
+		border-color: darken($white, 10%);
+	}
+
+	.btnText{
+		background-color: $white;
+		border-color: $white;
+	}
+}
+
+$btnThemeWhiteOutline: ("Common Class Theme Button White Outline": ".btnThemeWhiteOutline");
+$cmnts: map-merge($cmnts, $btnThemeWhiteOutline);
+@include inSelectorComment('Common Class Theme Button White Outline');
+.btnThemeWhiteOutline{
+
+	&.btnNoOver{
+		background-color: $white;
+		border-color: $white;
+
+		&:hover{
+			color: $white !important;
+		}
+	}
+
+	&:before{
+		color: $white;
+	}
+
+	.btnText{
+		color: $clr20;
+		background-color: $white;
+		border-color: $gray-200;
+	}
+}
+
+$btnThemeWhiteInverse: ("Common Class Theme Button White Inverse": ".btnThemeWhiteInverse");
+$cmnts: map-merge($cmnts, $btnThemeWhiteInverse);
+@include inSelectorComment('Common Class Theme Button White Inverse');
+.btnThemeWhiteInverse{
+
+	&:before{
+		background-color: darken($white, 10%);
+		border-color: darken($white, 10%);
+	}
+
+	.btnText{
+		background-color: $white;
+		border-color: $white;
+	}
+}
+
+$btnGary: ("Common Class Button Grey": ".btnGary");
+$cmnts: map-merge($cmnts, $btnGary);
+@include inSelectorComment('Common Class Button Grey');
+.btnGary {
+
+	&:before{
+		color: $white;
+	}
+
+	.btnText{
+		background-color: $gray-300;
+		border-color: $gray-300;
+	}
+}

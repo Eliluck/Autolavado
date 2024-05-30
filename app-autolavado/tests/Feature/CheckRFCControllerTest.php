@@ -26,7 +26,7 @@ class CheckRFCControllerTest extends TestCase
 
         $response = $this->postJson('/check-rfc', [
             'rfc' => 'XYZ123456789',
-            'sucursal' => 'Sucursal Principal'
+            'sucursal' => 'sucursal principal'
         ]);
 
         // Registrar los datos enviados

@@ -95,11 +95,12 @@ class ClientSeeder2 extends Seeder
             'CodActReg' => 'Codigo Registro',
             'TLIRegApl' => 1,
             'TLIRegArt' => 1,
-            'TLIVisitaSuc' => 'Sucursal Principal',
-            'TLIVisitaFch' => '2024-05-05 13:42:48',
+            'TLIVisitaSuc' => 1,
+            'TLIVisitaFch' => 1,
             'Ocupado' => 0,
-            'OcupadoSuc' => 'Sucursal Principal',
-            'Regimen' => 'Regimen Fiscal'
+            'OcupadoSuc' => 1,
+            'Regimen' => 'Regimen Fiscal',
+            'Sucursal' => 'AUTOMOTRIZ'
         ]);
     }
 }

@@ -14,7 +14,7 @@ class DirSatMunController extends Controller
     public function getByMunicipioCode($municipioCode)
     {
         // Obtener todos los registros de DirSatMun que tengan el código de municipio proporcionado
-        $dirSatMuns = DirSatMun::where('MunicipioCod', $municipioCode)->get();
+        $dirSatMuns = DirSatMun::where('MunCod', $municipioCode)->get();
 
         // Registro de log
         Log::info("Retrieved municipalities by code: MunicipioCod=$municipioCode");

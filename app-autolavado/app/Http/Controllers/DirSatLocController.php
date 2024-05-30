@@ -8,16 +8,16 @@ class DirSatLocController extends Controller
     /**
      * Display the resource based on postal code.
      *
-     * @param  string  $postalCode
+     * @param  string  $LocCod
      * @return \Illuminate\Http\Response
      */
-    public function getByPostalCode($postalCode)
+    public function getByLocCod($LocCod)
     {
         // Obtener el primer registro de DirSatLoc que tenga el código postal proporcionado
-        $dirSatLoc = DirSatLoc::where('CP', $postalCode)->first();
+        $dirSatLoc = DirSatLoc::where('LocCod', $LocCod)->first();
 
         // Registrar información en el log de Laravel
-        Log::info("Consulta de localidad por código postal: CP=$postalCode");
+        Log::info("Consulta de localidad por código postal: LocCod=$LocCod");
 
         return response()->json($dirSatLoc);
     }

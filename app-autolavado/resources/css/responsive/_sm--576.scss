@@ -1,0 +1,313 @@
+@include media-breakpoint-up(sm){
+	.imgHolderv1 {
+		border-radius: 96px;
+		max-width: 460px;
+
+		&:before {
+			@include size(391px, 377px);
+		}
+	}
+
+	.saSocialNetworks {
+
+		a {
+			font-size: 17px;
+			@include size(40px);
+		}
+	}
+
+	.saShareAside{
+
+		.title{
+			font-size: 24px !important;
+			line-height: (28/24);
+		}
+	}
+
+	.bilingDetailsWrap {
+
+		.formCol {
+			
+			&.formCol50 {
+				width: 50%;
+			}
+		}
+	}
+
+	.descrTag {
+		font-size: 18px;
+		padding: 17px 22px;
+
+		.icn {
+			font-size: 42px;
+		}
+	}
+
+	.descrTagv1 {
+		left: 50px;
+		bottom: 50px;
+	}
+
+	.sbSlider,
+	.cabCounterList {
+		max-width: 350px;
+	}
+
+	.cabCounterList {
+
+		.textCount {
+			font-size: 40px;
+		}
+
+		.cclColumnWrap {
+			font-size: 12px;
+		}
+	}
+
+	.galleryPhotoSlider {
+
+		.ssArrowVii {
+
+			&.slickPrev {
+				left: 10px;
+			}
+
+			&.slickNext {
+				left: 55px;
+			}
+		}
+	}
+
+	.clientQuote {
+
+		q {
+
+			&:before {
+				left: -57px;
+			}
+		}
+
+		.slick-current.slick-active &{
+
+			.profilePicWrap {
+				transform: scale(1);
+			}
+		}
+	}
+
+	.profilePicWrap {
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+		transform: scale(0);
+		transform-origin: 50% 50% 0;
+		transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+		top: 30px;
+	}
+
+	.requestCallAside {
+
+		.formWrap {
+			padding: 50px 25px;
+		}
+	}
+
+	.fabFeaturesList {
+
+		> li {
+			flex: 0 0 33.3333333333%;
+			min-width: 33.3333333333%;
+		}
+	}
+
+	.clientFeedback {
+		max-width: unset;
+	}
+
+	.serviceListView {
+
+		> li {
+			width: 50%;
+			max-width: unset;
+		}
+	}
+
+	.postNavigatorNav {
+		@include pseudo(before, 50%, null, null, 50%);
+
+		&:before {
+			border-radius: 100%;
+			background-color: $clr16;
+			transform: translate(-50%, -50%);
+			box-shadow: -16px 0 0 $clr16, 16px 0 0 $clr16;
+			@include size(7px);
+		}
+	}
+
+	.cartTotals {
+
+		tbody {
+
+			td {
+				padding: 20px;
+			}
+		}
+	}
+
+	.mccColumn {
+		max-width: none;	
+	}
+
+	.drItemRow {
+
+		.btnDownload {
+			position: absolute;
+			top: 50%;
+			right: 15px;
+			transform: translateY(-50%);
+		}
+	}
+
+	.superPowerTeamSection {
+
+		.playBtnWrap {
+			left: 30px;
+			top: 30px;
+		}
+	}
+
+	.blockPostColumn {
+
+		&.blogClassicVII {
+
+			q {
+				font-size: 24px;
+			}
+		}
+	}
+
+	.edupiInfosList {
+
+		> li {
+			width: calc(50% - 30px);
+			margin: 0 15px 30px;
+		}
+	}
+
+	.fakeRadioInput {
+		max-width: 180px;
+	}
+
+	.widgetGallery {
+
+		img {
+			width: unset;
+		}
+	}
+
+	.vssDropdownList {
+
+		li {
+
+			&:nth-child(1) {
+				padding-bottom: 0;
+				bottom: auto;
+				padding-right: 25px;
+				right: -25px;
+				border-bottom-left-radius: 0;
+				border-top-right-radius: 50px;
+			}
+
+			&:nth-child(2) {
+				bottom: auto;
+				right: 34px;
+			}
+
+			&:nth-child(3) {
+				bottom: auto;
+				right: 68px;
+				border-top-right-radius: 0;
+				border-bottom-left-radius: 50px;
+
+				.vssLink {
+					padding-left: 8px;
+					padding-top: 0;
+				}
+			}
+		}
+	}
+
+	.bookingForm {
+
+		.cbBtn {
+			min-width: 290px;
+		}
+
+		.apdInputWrap {
+
+			.form-control {
+				padding-left: 20px;
+			}
+		}
+	}
+
+	.abtServiceColumn {
+		max-width: unset;
+	}
+
+	.ourGallerySlider {
+
+		.gPhoColumn {
+			max-width: unset;
+		}
+
+		.slick-list {
+			overflow: hidden;
+		}
+
+		.slick-arrow {
+			transform: none;
+
+			&.slickPrev {
+				left: 10px;
+			}
+
+			&.slickNext {
+				left: 55px;
+			}
+		}
+	}
+
+	.reviewSubmissionForm {
+
+		.col-form-label {
+			padding-bottom: 0;
+		}
+	}
+
+	.reviewsList {
+
+		li {
+			margin-bottom: 40px;
+		}
+
+		.alignleft {
+			float: left;
+			margin: 0 25px 0 0;
+		}
+	}
+
+	.bpCommentsList {
+
+		.cmntWrap {
+			padding-left: 35px;
+		}
+	
+		.bpChildCommentsList {
+
+			.cmntWrap {
+				padding-left: 70px;
+			}
+		}
+	}
+}

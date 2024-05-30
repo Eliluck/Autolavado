@@ -1,0 +1,89 @@
+@include media-breakpoint-up(lgwd){
+	.pgLinkGo {
+		@include size(50px);
+		font-size: 18px;
+	}
+
+	.filterList {
+		margin-right: 140px !important;
+
+		li {
+			margin-right: 25px;
+		}
+	}
+
+	.testimonialSliderVI {
+
+		.slickPrev,
+		.slickNext {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.slickPrev {
+			left: -45px;
+		}
+
+		.slickNext {
+			right: -45px;
+		}
+	}
+
+	.cartTotals {
+
+		.col01,
+		.col02 {
+			width: 50%;
+		}
+	}
+
+	.seeBenefitsAside {
+
+		.fabFeaturesList {
+
+			&:before,
+			&:after {
+				height: 170px;
+			}
+
+			li + li {
+
+				.featureColumn {
+
+					&:before {
+						height: 170px;
+					}
+				}
+			}
+
+			li:last-child {
+
+				&:after {
+					content: none;	
+				}
+			}
+		}
+
+		&.seeBenefitsAsideVII {
+
+			.fabFeaturesList {
+
+				li {
+					flex: 0 0 16.66667%;
+					min-width: 16.66667%;
+				}
+			}
+		}
+	}
+
+	.profilePicWrap {
+		left: 40px;
+	}
+
+	.cuMapBlock {
+
+		.cuMapHolder {
+			min-height: 450px;
+		}
+	}
+}

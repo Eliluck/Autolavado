@@ -11,13 +11,13 @@ class DirSatEdoController extends Controller
      * @param  int  $cp
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getEstadoPorCP($cp)
+    public function getEstadoPorEdoCod($EdoCod)
     {
         // Realiza la consulta para obtener el estado correspondiente al CP
-        $estado = DirSatEdo::where('CP', $cp)->get();
+        $estado = DirSatEdo::where('EdoCod', $EdoCod)->get();
 
         // Registra la consulta en el log de Laravel
-        Log::info("Retrieved state by postal code: CP=$cp");
+        Log::info("Retrieved state by postal code: EdoCod=$EdoCod");
         // Retorna el estado en formato JSON
         return response()->json($estado);
     }

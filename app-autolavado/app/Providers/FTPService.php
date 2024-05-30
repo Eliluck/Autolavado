@@ -9,9 +9,9 @@ class FTPService
     protected $ftpPassword;
     public function __construct($ftpServer, $ftpUser, $ftpPassword)
     {
-        $this->ftpServer = $ftpServer;
-        $this->ftpUser = $ftpUser;
-        $this->ftpPassword = $ftpPassword;
+        $this->ftpServer = config($ftpServer);
+        $this->ftpUser = config($ftpUser);
+        $this->ftpPassword = config($ftpPassword);
         Log::info('FTPService initialized', ['ftpServer' => $ftpServer]);
     }
     public function downloadFile($remoteFile, $localPath)

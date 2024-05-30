@@ -1,0 +1,482 @@
+@font-face {
+	font-family: 'icomoon';
+	src:
+		url('fonts/icomoon.ttf?h7kkm8') format('truetype'),
+		url('fonts/icomoon.woff?h7kkm8') format('woff'),
+		url('fonts/icomoon.svg?h7kkm8#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+[class^="icomoon-"], [class*=" icomoon-"] {
+	font-family: 'icomoon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icomoon-icnQuote:before {
+  content: "\e900";
+}
+.icomoon-web:before {
+  content: "\e901";
+}
+.icomoon-mouse:before {
+  content: "\e902";
+}
+.icomoon-sending-call:before {
+  content: "\e903";
+}
+.icomoon-arrowUp:before {
+  content: "\e904";
+}
+.icomoon-arrowLeft:before {
+  content: "\e905";
+}
+.icomoon-arrowDown:before {
+  content: "\e906";
+}
+.icomoon-arrowRight:before {
+  content: "\e907";
+}
+.icomoon-online-question:before {
+  content: "\e908";
+}
+.icomoon-mail:before {
+  content: "\e909";
+}
+.icomoon-paper-plane:before {
+  content: "\e90a";
+}
+.icomoon-telephone-1:before {
+  content: "\e90b";
+}
+.icomoon-telephone:before {
+  content: "\e90c";
+}
+.icomoon-video-chat:before {
+  content: "\e90d";
+}
+.icomoon-template:before {
+  content: "\e90e";
+}
+.icomoon-mailbox:before {
+  content: "\e90f";
+}
+.icomoon-send:before {
+  content: "\e910";
+}
+.icomoon-contact:before {
+  content: "\e911";
+}
+.icomoon-globe:before {
+  content: "\e912";
+}
+.icomoon-world:before {
+  content: "\e913";
+}
+.icomoon-email-5:before {
+  content: "\e914";
+}
+.icomoon-email-4:before {
+  content: "\e915";
+}
+.icomoon-phone-2:before {
+  content: "\e916";
+}
+.icomoon-write-letter:before {
+  content: "\e917";
+}
+.icomoon-email-3:before {
+  content: "\e918";
+}
+.icomoon-time-call-1:before {
+  content: "\e919";
+}
+.icomoon-time-call:before {
+  content: "\e91a";
+}
+.icomoon-telephone-book:before {
+  content: "\e91b";
+}
+.icomoon-schedule:before {
+  content: "\e91c";
+}
+.icomoon-website:before {
+  content: "\e91d";
+}
+.icomoon-calendar:before {
+  content: "\e91e";
+}
+.icomoon-address:before {
+  content: "\e91f";
+}
+.icomoon-email-2:before {
+  content: "\e920";
+}
+.icomoon-home:before {
+  content: "\e921";
+}
+.icomoon-profile:before {
+  content: "\e922";
+}
+.icomoon-text:before {
+  content: "\e923";
+}
+.icomoon-phone-1:before {
+  content: "\e924";
+}
+.icomoon-email-1:before {
+  content: "\e925";
+}
+.icomoon-call-1:before {
+  content: "\e926";
+}
+.icomoon-call:before {
+  content: "\e927";
+}
+.icomoon-chat-1:before {
+  content: "\e928";
+}
+.icomoon-location:before {
+  content: "\e929";
+}
+.icomoon-email:before {
+  content: "\e92a";
+}
+.icomoon-chat:before {
+  content: "\e92b";
+}
+.icomoon-phone:before {
+  content: "\e92c";
+}
+.icomoon-send-mail:before {
+  content: "\e92d";
+}
+.icomoon-message:before {
+  content: "\e92e";
+}
+.icomoon-mail-4:before {
+  content: "\e92f";
+}
+.icomoon-mail-3:before {
+  content: "\e930";
+}
+.icomoon-telephone-2:before {
+  content: "\e931";
+}
+.icomoon-home-message:before {
+  content: "\e932";
+}
+.icomoon-mail-2:before {
+  content: "\e933";
+}
+.icomoon-icnShare:before {
+  content: "\e934";
+}
+.icomoon-mobile-phone:before {
+  content: "\e935";
+}
+.icomoon-phone-3:before {
+  content: "\e936";
+}
+.icomoon-mail-1:before {
+  content: "\e937";
+}
+.icomoon-link:before {
+  content: "\e938";
+}
+.icomoon-discount:before {
+  content: "\e939";
+}
+.icomoon-car-service:before {
+  content: "\e93a";
+}
+.icomoon-whatsapp:before {
+  content: "\e93b";
+}
+.icomoon-document:before {
+  content: "\e93c";
+}
+.icomoon-keyboard:before {
+  content: "\e93d";
+}
+.icomoon-laptop:before {
+  content: "\e93e";
+}
+.icomoon-link1:before {
+  content: "\e93f";
+}
+.icomoon-location1:before {
+  content: "\e940";
+}
+.icomoon-mail1:before {
+  content: "\e941";
+}
+.icomoon-meetup:before {
+  content: "\e942";
+}
+.icomoon-message1:before {
+  content: "\e943";
+}
+.icomoon-mouse1:before {
+  content: "\e944";
+}
+.icomoon-news:before {
+  content: "\e945";
+}
+.icomoon-office:before {
+  content: "\e946";
+}
+.icomoon-open:before {
+  content: "\e947";
+}
+.icomoon-phone-call:before {
+  content: "\e948";
+}
+.icomoon-schedule1:before {
+  content: "\e949";
+}
+.icomoon-smartphone:before {
+  content: "\e94a";
+}
+.icomoon-sms:before {
+  content: "\e94b";
+}
+.icomoon-support:before {
+  content: "\e94c";
+}
+.icomoon-videocall:before {
+  content: "\e94d";
+}
+.icomoon-visit-card:before {
+  content: "\e94e";
+}
+.icomoon-at:before {
+  content: "\e94f";
+}
+.icomoon-browser:before {
+  content: "\e950";
+}
+.icomoon-chat1:before {
+  content: "\e951";
+}
+.icomoon-clock:before {
+  content: "\e952";
+}
+.icomoon-connection:before {
+  content: "\e953";
+}
+.icomoon-contacts:before {
+  content: "\e954";
+}
+.icomoon-desktop:before {
+  content: "\e955";
+}
+.icomoon-faq:before {
+  content: "\e956";
+}
+.icomoon-home1:before {
+  content: "\e957";
+}
+.icomoon-information:before {
+  content: "\e958";
+}
+.icomoon-international:before {
+  content: "\e959";
+}
+.icomoon-interphone:before {
+  content: "\e95a";
+}
+.icomoon-information1:before {
+  content: "\e95b";
+}
+.icomoon-credit-card:before {
+  content: "\e95c";
+}
+.icomoon-medal:before {
+  content: "\e95d";
+}
+.icomoon-like:before {
+  content: "\e95e";
+}
+.icomoon-tire:before {
+  content: "\e95f";
+}
+.icomoon-car-1:before {
+  content: "\e960";
+}
+.icomoon-mat:before {
+  content: "\e961";
+}
+.icomoon-seat:before {
+  content: "\e962";
+}
+.icomoon-steering-wheel:before {
+  content: "\e963";
+}
+.icomoon-ventilator:before {
+  content: "\e964";
+}
+.icomoon-clean:before {
+  content: "\e965";
+}
+.icomoon-mechanic:before {
+  content: "\e966";
+}
+.icomoon-bathing:before {
+  content: "\e967";
+}
+.icomoon-car-wash-4:before {
+  content: "\e968";
+}
+.icomoon-car:before {
+  content: "\e969";
+}
+.icomoon-vacuum-cleaner:before {
+  content: "\e96a";
+}
+.icomoon-car-wash-3:before {
+  content: "\e96b";
+}
+.icomoon-spray:before {
+  content: "\e96c";
+}
+.icomoon-repair:before {
+  content: "\e96d";
+}
+.icomoon-fuel:before {
+  content: "\e96e";
+}
+.icomoon-car-wash-2:before {
+  content: "\e96f";
+}
+.icomoon-car-wash-1:before {
+  content: "\e970";
+}
+.icomoon-air-blower:before {
+  content: "\e971";
+}
+.icomoon-car-wash:before {
+  content: "\e972";
+}
+.icomoon-3345656:before {
+  content: "\e973";
+}
+.icomoon-checky:before {
+  content: "\e974";
+}
+.icomoon-chat2:before {
+  content: "\e975";
+}
+.icomoon-icn-syc04:before {
+  content: "\e976";
+}
+.icomoon-icn-syc03:before {
+  content: "\e977";
+}
+.icomoon-icn-syc02:before {
+  content: "\e978";
+}
+.icomoon-icn-syc01:before {
+  content: "\e979";
+}
+.icomoon-2371519:before {
+  content: "\f100";
+}
+.icomoon-2371520:before {
+  content: "\f101";
+}
+.icomoon-2371521:before {
+  content: "\f102";
+}
+.icomoon-2371522:before {
+  content: "\f103";
+}
+.icomoon-2371523:before {
+  content: "\f104";
+}
+.icomoon-2371524:before {
+  content: "\f105";
+}
+.icomoon-2371525:before {
+  content: "\f106";
+}
+.icomoon-2371526:before {
+  content: "\f107";
+}
+.icomoon-2371527:before {
+  content: "\f108";
+}
+.icomoon-2371528:before {
+  content: "\f109";
+}
+.icomoon-2371529:before {
+  content: "\f10a";
+}
+.icomoon-2371530:before {
+  content: "\f10b";
+}
+.icomoon-2371531:before {
+  content: "\f10c";
+}
+.icomoon-2371532:before {
+  content: "\f10d";
+}
+.icomoon-2371533:before {
+  content: "\f10e";
+}
+.icomoon-2371534:before {
+  content: "\f10f";
+}
+.icomoon-2371535:before {
+  content: "\f110";
+}
+.icomoon-2371536:before {
+  content: "\f111";
+}
+.icomoon-2371537:before {
+  content: "\f112";
+}
+.icomoon-2371538:before {
+  content: "\f113";
+}
+.icomoon-2371539:before {
+  content: "\f114";
+}
+.icomoon-2371540:before {
+  content: "\f115";
+}
+.icomoon-2371541:before {
+  content: "\f116";
+}
+.icomoon-2371542:before {
+  content: "\f117";
+}
+.icomoon-2371543:before {
+  content: "\f118";
+}
+.icomoon-2371544:before {
+  content: "\f119";
+}
+.icomoon-2371545:before {
+  content: "\f11a";
+}
+.icomoon-2371546:before {
+  content: "\f11b";
+}
+.icomoon-2371547:before {
+  content: "\f11c";
+}
+.icomoon-2371548:before {
+  content: "\f11d";
+}
+.icomoon-icnQuoteAlt:before {
+  content: "\e97a";
+}

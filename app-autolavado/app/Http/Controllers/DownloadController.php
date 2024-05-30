@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Providers\FTPService;
 use Illuminate\Support\Facades\Log;
@@ -8,7 +10,7 @@ class DownloadController extends Controller
 {
     public function downloadPDFXML(Request $request)
     {
-        Log::info('Solicitud recibida para descargar PDF y XML', ['venta' => $request->input('venta', 'not specified')]);
+        Log::info('Solicitud recibida para descargar PDF y XML', ['VENTA' => $request->input('venta', 'not specified')]);
         // Valida que se haya pasado el parámetro 'venta'
         if (!$request->filled('venta')) {
             Log::error('Error: Parámetro de venta no encontrado en la solicitud.');

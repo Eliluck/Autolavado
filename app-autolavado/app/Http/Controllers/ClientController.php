@@ -1,6 +1,8 @@
 <?php
+
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Models\Client;
 use App\Models\DirSatCP;
@@ -21,7 +23,7 @@ class ClientController extends Controller
      */
     public function getByRFC($rfc)
     {
-        Log::info('Iniciando la búsqueda del cliente', ['rfc' => $rfc]);
+        Log::info('Iniciando la búsqueda del cliente', ['RFC' => $rfc]);
         try {
             Log::info('Obteniendo catálogos del sistema');
             $paises = DirSatPais::all()->toArray();
@@ -35,9 +37,9 @@ class ClientController extends Controller
             $metodosPago = PagoMetodo::all()->toArray();
             Log::info('Catálogos de métodos de pago obtenidos', ['cantidad' => count($metodosPago)]);
 
-            $client = Client::where('rfc', $rfc)->first();
+            $client = Client::where('RFC', $rfc)->first();
             if (!$client) {
-                Log::info('Cliente no encontrado con el RFC proporcionado', ['rfc' => $rfc]);
+                Log::info('Cliente no encontrado con el RFC proporcionado', ['RFC' => $rfc]);
                 return response()->json([
                     'error' => 'Cliente no encontrado',
                     'paises' => $paises,
@@ -48,42 +50,49 @@ class ClientController extends Controller
                 ], 404);
             }
 
-            Log::info('Cliente encontrado, procesando datos adicionales', ['cliente' => $client->id]);
+            Log::info('Cliente encontrado, procesando datos adicionales', ['client' => $client->CLIENTE]);
             $data = [
-                'nombre' => $client->nombre,
-                'rfc' => $client->rfc,
-                'pais' => $client->pais,
-                'cp' => $client->cp,
-                'pobla' => $client->pobla,
-                'ciudad' => $client->ciudad,
-                'estado' => $client->estado,
-                'colonia' => $client->colonia,
-                'calle' => $client->calle,
+                'NOMBRE' => $client->NOMBRE,
+                'RFC' => $client->RFC,
+                'PAIS' => $client->PAIS,
+                'CP' => $client->CP,
+                'POBLA' => $client->POBLA,
+                'CIUDAD' => $client->CIUDAD,
+                'ESTADO' => $client->ESTADO,
+                'COLONIA' => $client->COLONIA,
+                'CALLE' => $client->CALLE,
                 'numeroexterior' => $client->numeroexterior,
                 'numerointerior' => $client->numerointerior,
                 'UsoCFDI' => $client->UsoCFDI,
-                'regimenFiscal' => $client->Regimen,
+                'Regimen' => $client->Regimen,
                 'pagoForma' => $client->PagoForma,
                 'PagoMetodo' => $client->PagoMetodo,
-                'email' => $client->correo,
-                'paises' => $paises,
-                'usos_cfdi' => $usosCFDI,
-                'regimen_fiscal' => $regimenes,
-                'pagos' => $formasPago,
-                'metodos' => $metodosPago
+                'CORREO' => $client->CORREO
             ];
-
-            $cps = DirSatCP::where('PaisCod', $client->pais)->get(['CP'])->toArray();
-            Log::info('Códigos postales obtenidos para el país del cliente', ['pais' => $client->pais, 'cps' => $cps]);
-            $colonias = DirSatCol::where('CP', $client->cp)->get(['ColCod', 'ColNom'])->toArray();
-            Log::info('Colonias obtenidas para el código postal del cliente', ['cp' => $client->cp, 'colonias' => $colonias]);
-            $data['cps'] = $cps;
-            $data['colonias'] = $colonias;
 
             Log::info('Datos completos del cliente listos para devolver', ['data' => $data]);
             return response()->json($data);
         } catch (\Exception $e) {
-            Log::error('Error al obtener información del cliente', ['rfc' => $rfc, 'exception' => $e]);
+            Log::error('Error al obtener información del cliente', ['RFC' => $rfc, 'exception' => $e]);
+            return response()->json(['error' => 'Error interno del servidor'], 500);
+        }
+    }
+
+    /**
+     * Guarda la información del cliente enviada desde el formulario.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function saveClient(Request $request)
+    {
+        try {
+            Log::info('Intento de creación de nuevo cliente', ['data' => $request->all()]);
+            $client = Client::create($request->all());
+            Log::info('Nuevo cliente creado con éxito', ['client_id' => $client->id]);
+            return response()->json(['message' => 'Cliente guardado exitosamente'], 201);
+        } catch (\Exception $e) {
+            Log::error('Error al guardar el cliente', ['exception' => $e]);
             return response()->json(['error' => 'Error interno del servidor'], 500);
         }
     }

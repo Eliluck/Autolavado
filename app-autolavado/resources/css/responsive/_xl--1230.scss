@@ -1,0 +1,292 @@
+@include media-breakpoint-up(xl){
+	h1, .h1 {
+		font-size: (44/16) + rem;
+	}
+
+	h2, .h2 {
+		font-size: (40/16) + rem;
+	}
+
+	h3, .h3 {
+		font-size: (36/16) + rem;
+	}
+
+	.h1Large {
+		font-size: (64/16) + rem;
+	}
+
+	.h2Large {
+		font-size: (50/16) + rem;
+	}
+
+	.h3Small {
+		font-size: (32/16) + rem;
+	}
+
+	.h3Medium {
+		font-size: (24/16) + rem;
+	}
+
+	.h3Large {
+		font-size: (26/16) + rem;
+	}
+
+	.phStickyWrap {
+		min-height: 95px;
+	}
+
+	.ibsColumn {
+		min-height: calc(100vh - 95px);
+	}
+
+	#pageHeader {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.logo {
+		margin-top: 3px;
+		max-width: 128px;
+	}
+
+	#pageNav {
+		width: calc(100% - 138px);
+	}
+
+	.mainNavigation {
+
+		&,
+		&.navbar-nav {
+
+			.nav-link {
+				font-size: 17px;
+			}
+		}
+
+		.ddohOpener {
+
+			&:after {
+				height: 43px;
+			}
+		}
+	}
+
+	.babFeatureColumn {
+
+		.icnWrap {
+			height: 75px;
+			font-size: 70px;
+		}
+	}
+
+	.imgHolderv1 {
+
+		&:before {
+			@include size(511px, 507px);		
+		}
+	}
+
+	.esColumn {
+
+		.icnWrap {
+			left: 40px;
+		}
+	}
+
+	.expWatermark {
+		font-size: 616px;
+	}
+
+	.arddColumnSlider {
+
+		.slick-arrow {
+			left: -240px;
+
+			&.slickPrev {
+				left: -300px;
+			}
+		}
+	}
+
+	.requestCallAside {
+
+		.formWrap {
+			padding: 50px 40px;
+		}
+
+		&.requestCallAside {
+
+			.imgWrap {
+				width: 750px;
+			}
+		}
+	}
+
+	.testimonialSliderVI {
+
+		.slickPrev {
+			left: -30px;
+		}
+
+		.slickNext {
+			right: -30px;
+		}
+	}
+
+	.clientQuoteii {
+
+		&:after {
+			font-size: 38px;
+			line-height: 38px;
+			bottom: 13px;
+		}
+	}
+
+	.proItemCol {
+		padding: 5px 15px 30px;
+	}
+
+	.fpList {
+
+		.imgWrap {
+			margin: 0 1em 4px 0;
+			width: 80px;
+		}
+	}
+
+	.blockPostColumn {
+
+		&.blogClassicVII {
+
+			.fdbWrap {
+				padding: 30px 50px 40px;
+			}
+		}
+	}
+
+	.tmcbDescriptionBox {
+
+		.imgHolder {
+			width: 423px;
+			padding-top: 0;
+		}
+	}
+
+	.bookingSystemWrap {
+		margin-top: -200px;
+	}
+
+	.productSlider {
+
+		.ssArrowVii {
+
+			&.slickPrev {
+				left: -10px;
+			}
+
+			&.slickNext {
+				right: -10px;
+			}
+		}
+	}
+
+	.abtServiceColumn {
+
+		.onHover {
+			padding: 15px 30px 55px;
+		}
+	}
+
+	.ourGallerySlider {
+
+		.slick-arrow {
+			bottom: 0;
+
+			&.slickPrev {
+				left: -390px;
+			}
+
+			&.slickNext {
+				left: -328px;
+			}
+		}
+	}
+
+	.hdMainDropdown {
+		margin-top: 34px;
+		min-width: 220px;
+		font-size: 16px;
+	}
+
+	.bpCommentsList {
+	
+		.bpChildCommentsList {
+
+			.cmntWrap {
+				padding-left: 130px;
+			}
+		}
+	}
+
+	.gPhoColumn {
+
+		.pgLink,
+		.h5 {
+			left: 40px;
+		}
+
+		.h5 {
+			top: 35px;
+
+			.pgCategory {
+				margin-top: 13px;
+			}
+		}
+
+		.pgLink {
+			bottom: 35px;
+		}
+
+		&:hover {
+
+			.h5 {
+				top: 40px;
+			}
+
+			.pgLink {
+				bottom: 40px;
+			}
+		}
+	}
+
+	.processColumn {
+
+		.imgHolder {
+			right: -140px;
+		}
+	}
+
+	.galleryPhotoSlider {
+
+		.ssArrowVii {
+			top: -113px;
+
+			&.slickPrev {
+				left: auto;
+				right: 72px;
+			}
+
+			&.slickNext {
+				left: auto;
+				right: 10px;
+			}
+		}
+	}
+
+	.cuMapBlock {
+
+		.cuMapHolder {
+			min-height: 500px;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+@include media-breakpoint-up(xxl){
+	#pageHeader {
+		padding-left: 35px;
+		padding-right: 35px;
+	}
+
+	.imgHolderCap {
+		bottom: -296px;
+		max-width: 1116px;
+	}
+
+	.imhcPinWrap1 {
+		margin-left: -348px;
+		margin-top: -258px;
+	}
+
+	.imhcPinWrap2 {
+		margin-top: -184px;
+		margin-left: 68px;
+	}
+	
+	.imhcPinWrap3 {
+		margin-left: 276px;
+	}
+}

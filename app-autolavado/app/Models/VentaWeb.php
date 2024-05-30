@@ -6,7 +6,7 @@ class VentaWeb extends Model
 {
     protected $table = 'ventas_web';
     protected $primaryKey = 'VENTA';
-    public $timestamps = false; // Si no tienes campos de fecha de creación y actualización
+    public $timestamps = false; // Si no tienes campos de fecha de creación y actualización ventaref
     protected $fillable = [
         'OCUPADO', 'TIPO_DOC', 'serieDocumento', 'NO_REFEREN', 'F_EMISION', 'F_VENC', 'CLIENTE',
         'VEND', 'IMPORTE', 'DESCUENTO', 'IMPUESTO', 'PRECIO', 'COSTO', 'ALMACEN', 'ESTADO', 'OBSERV',
