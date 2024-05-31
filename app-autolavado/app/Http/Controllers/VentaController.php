@@ -15,6 +15,7 @@ class VentaController extends Controller
             'inicio' => $request->input('inicio'),
             'fin' => $request->input('fin')
         ]);
+
         try {
             // Validar que se hayan pasado todos los parámetros
             $rfc = $request->input('rfc');
@@ -39,8 +40,8 @@ class VentaController extends Controller
                 ->leftJoin('client', 'client.CLIENTE', '=', 'Ventas_Web.CLIENTE')
                 ->where('client.RFC', $rfc)
                 ->where('Ventas_Web.estado', 'CO')
-                ->where('Ventas_Web.f_emision', '>=', $inicio)
-                ->where('Ventas_Web.f_emision', '<=', $fin)
+                ->where('Ventas_Web.F_EMISION', '>=', $inicio)
+                ->where('Ventas_Web.F_EMISION', '<=', $fin)
                 ->where('Ventas_Web.tipo_doc', 'FAC')
                 ->get();
 
