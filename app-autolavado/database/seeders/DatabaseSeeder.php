@@ -8,6 +8,6 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-    $this->call(VentasWebTableSeeder::class);
+        $this->call(VentasWebSeeder2::class);
     }
 }

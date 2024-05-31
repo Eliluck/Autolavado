@@ -15,6 +15,9 @@ use App\Http\Controllers\UpdateDatosFiscalesController;
 use App\Http\Controllers\VentaController;
 use App\Http\Controllers\RFCValidationController;
 use App\Http\Controllers\SucursalController;
+use App\Http\Controllers\HomeController;
+
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/inicio', function () {
     return view('home1');
