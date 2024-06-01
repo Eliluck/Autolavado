@@ -40,7 +40,7 @@
         <table id="facturasTable">
             <thead>
                 <tr>
-                    <th class="Nombre">Nombre</th>
+                    <th class="Nombre">Cliente</th>
                     <th class="Fecha">Fecha</th>
                     <th>Descargar</th>
                 </tr>
@@ -59,6 +59,11 @@
             const quitarFiltrosButton = document.getElementById('quitarFiltros');
             const facturasContainer = document.getElementById('facturasContainer');
 
+            function convertDateFormat(dateString) {
+                const [year, month, day] = dateString.split('-');
+                return `${year}-${month}-${day}`;
+            }
+
             async function fetchFacturas(inicio = null, fin = null) {
                 const rfc = localStorage.getItem('RFC'); // Obtener el RFC de localStorage
 
@@ -70,8 +75,8 @@
                 const body = {
                     rfc: rfc
                 };
-                if (inicio) body.inicio = inicio;
-                if (fin) body.fin = fin;
+                if (inicio) body.inicio = convertDateFormat(inicio);
+                if (fin) body.fin = convertDateFormat(fin);
 
                 try {
                     const response = await fetch('{{ url('/ventas/documentos') }}', {
@@ -87,16 +92,27 @@
 
                     if (response.ok) {
                         console.log(result); // Opcional: para depuración
-                        // Llenar la tabla con los datos recibidos
-                        facturasContainer.innerHTML = ''; // Limpiar contenido previo
+                        // Limpiar contenido previo
+                        facturasContainer.innerHTML = '';
+
+                        // Añadir filas para cada venta
                         result.ventas.forEach(venta => {
                             const row = document.createElement('tr');
                             row.innerHTML = `
-                                <td class="Nombre">${venta.venta}</td>
-                                <td class="Fecha">${venta.f_emision}</td>
-                                <td><a href="data:application/xml;base64,${venta.LogCFDI}" download="factura_${venta.UUID}.xml" class="Descargard">Descargar</a></td>
+                                <td class="Nombre">${result.cliente}</td>
+                                <td class="Fecha">${venta.f_EMISION}</td>
+                                <td><button class="Descargard" data-venta="${venta.VENTA}">Descargar</button></td>
                             `;
                             facturasContainer.appendChild(row);
+                        });
+
+                        // Agregar evento de clic a cada botón de descarga
+                        document.querySelectorAll('.Descargard').forEach(button => {
+                            button.addEventListener('click', function() {
+                                const venta = this.getAttribute('data-venta');
+                                window.location.href =
+                                    `{{ url('/download-ftp') }}?venta=${venta}`;
+                            });
                         });
                     } else {
                         alert('Error al recuperar las facturas: ' + (result.message || result.error_code));

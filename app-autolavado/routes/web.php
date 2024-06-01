@@ -15,9 +15,10 @@ use App\Http\Controllers\UpdateDatosFiscalesController;
 use App\Http\Controllers\VentaController;
 use App\Http\Controllers\RFCValidationController;
 use App\Http\Controllers\SucursalController;
-use App\Http\Controllers\HomeController;
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', function () {
+    return view('home1');
+});
 
 Route::get('/inicio', function () {
     return view('home1');
@@ -98,6 +99,6 @@ Route::put('/update', [UpdateDatosFiscalesController::class, 'updateDatosFiscale
 // Ruta para obtener documentos de ventas filtrados por RFC y fechas, esta ruta es del controlador VentaController
 Route::post('/ventas/documentos', [VentaController::class, 'getDocumentos']);
 
-Route::get('/download-ftp', [DownloadController::class, 'testDownload']);
+Route::get('/download-ftp', [DownloadController::class, 'downloadPDFXML']);
 
 Route::get('/sucursales', [SucursalController::class, 'index']);
