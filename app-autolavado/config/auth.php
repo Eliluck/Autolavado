@@ -42,6 +42,14 @@ return [
         ],
     ],
 
+    'guards' => [
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        // otros guards...
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | User Providers
@@ -69,6 +77,13 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+    ],
+
+    'providers' => [
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
     ],
 
     /*

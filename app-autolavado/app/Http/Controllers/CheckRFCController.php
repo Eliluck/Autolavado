@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Log;
 class CheckRFCController extends Controller
 {
     /**
-     * Check if RFC exists.
+     * Check if RFC exists with a given Sucursal.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse
@@ -18,24 +18,27 @@ class CheckRFCController extends Controller
     {
         try {
             // Registrar el recibimiento de la solicitud
-            Log::info("Recibida solicitud para verificar RFC", ['data' => $request->all()]);
+            Log::info("Recibida solicitud para verificar RFC y Sucursal", ['data' => $request->all()]);
 
             // Validar la solicitud de entrada
             $validated = $request->validate([
                 'RFC' => 'required|string|max:20',
+                'Sucursal' => 'required|string|max:100',
             ]);
 
             // Registrar datos validados
-            Log::info("Datos validados para la consulta de RFC", ['validated' => $validated]);
+            Log::info("Datos validados para la consulta de RFC y Sucursal", ['validated' => $validated]);
 
-            // Obtener el RFC de la solicitud
+            // Obtener el RFC y la Sucursal de la solicitud
             $rfc = $request->input('RFC');
+            $sucursal = $request->input('Sucursal');
 
-            // Guardar el RFC en la sesión
+            // Guardar el RFC y la Sucursal en la sesión
             $request->session()->put('RFC', $rfc);
+            $request->session()->put('Sucursal', $sucursal);
 
             // Registrar el guardado en la sesión
-            Log::info("RFC guardado en la sesión", ['RFC' => $rfc]);
+            Log::info("RFC y Sucursal guardados en la sesión", ['RFC' => $rfc, 'Sucursal' => $sucursal]);
 
             // Buscar el RFC en la base de datos
             $client = Client::where('RFC', $rfc)->first();
@@ -43,20 +46,26 @@ class CheckRFCController extends Controller
             // Registrar intento de búsqueda
             Log::info("Intentando buscar en la base de datos", ['RFC' => $rfc]);
 
-            // Registrar el resultado de la búsqueda
             if ($client) {
-                Log::info("RFC encontrado en la base de datos", ['RFC' => $rfc]);
-                return response()->json(['exists' => true]);
+                // Registrar el resultado de la búsqueda
+                if ($client->Sucursal === $sucursal) {
+                    Log::info("RFC y Sucursal coinciden en la base de datos", ['RFC' => $rfc, 'Sucursal' => $sucursal]);
+                    return response()->json(['exists' => true]);
+                } else {
+                    Log::info("RFC encontrado pero la Sucursal no coincide", ['RFC' => $rfc, 'Sucursal' => $sucursal]);
+                    return response()->json(['exists' => true]);
+                }
             } else {
                 Log::info("RFC no encontrado en la base de datos", ['RFC' => $rfc]);
                 return response()->json(['exists' => false]);
             }
         } catch (\Exception $e) {
             // Registrar el error en el log
-            Log::error("Error en la consulta de RFC", [
+            Log::error("Error en la consulta de RFC y Sucursal", [
                 'exception' => $e->getMessage(),
                 'trace' => $e->getTraceAsString(),
-                'RFC' => $rfc ?? 'N/A'
+                'RFC' => $rfc ?? 'N/A',
+                'Sucursal' => $sucursal ?? 'N/A'
             ]);
 
             // Devolver una respuesta JSON indicando el error
