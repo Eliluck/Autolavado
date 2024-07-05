@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Log;
 class CheckRFCController extends Controller
 {
     /**
-     * Check if RFC exists with a given Sucursal.
+     * Check if RFC exists with a given Sucursal
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse
